@@ -36,7 +36,6 @@
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="Αρχική">
         <span class="brand-mark" aria-hidden="true">
-          <!-- Replace logo.jpg with your own -->
           <img src="logo.jpg" alt="Λογότυπο" loading="lazy">
         </span>
 
@@ -51,7 +50,7 @@
         <span class="nav-toggle-line"></span>
       </button>
 
-      <nav class="nav" aria-label="Κύρια πλοήγηση">
+      <nav class="nav" aria-label="Κύρια πλοήγγηση">
         <a href="#services">Υπηρεσίες</a>
         <a href="#education">Εκπαίδευση</a>
         <a href="#faq">FAQ</a>
@@ -111,7 +110,7 @@
           <a class="social-link" href="https://www.tiktok.com/@nikoleta.plati" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M14 3v10.2a3.8 3.8 0 11-3-3.7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M14 7c1.1 1.6 2.7 2.6 4.6 2.7V7.2c-1.3-.1-2.5-.8-3.3-1.8-.5-.6-.9-1.5-1-2.4H14z" fill="currentColor" opacity=".92"/>
+              <path d="M14 7c1.1 1.6 2.7 2.6 4.6 2.7V7.2c-1.3-.1-2.5-.8-3.3-1.8-.5-.6.9-1.5-1-2.4H14z" fill="currentColor" opacity=".92"/>
             </svg>
           </a>
         </div>
@@ -152,7 +151,6 @@
             <div class="hero-mini-card">
               <strong>Γρήγορη επιλογή υπηρεσίας</strong>
               <ul>
-                <li>Ατομικές Συνεδρίες Ενηλίκων</li>
                 <li>Συμβουλευτική Γονέων</li>
                 <li>Θεραπεία Συμπεριφοράς (ΑΒΑ)</li>
                 <li>Παιγνιοθεραπεία</li>
@@ -163,7 +161,6 @@
 
         <div class="hero-visual">
           <div class="hero-photo">
-            <!-- Replace Hero-section.png with your own photo -->
             <img src="Hero-section.png" alt="Χώρος συνεδριών" loading="eager">
           </div>
 
@@ -176,22 +173,22 @@
             <div class="visual-card-mid">
               <div class="metric">
                 <span class="metric-label">Υπηρεσίες</span>
-                <span class="metric-value">4 διαθέσιμες επιλογές</span>
+                <span class="metric-value">3 διαθέσιμες επιλογές</span>
               </div>
               <div class="metric">
                 <span class="metric-label">Διάρκεια</span>
-                <span class="metric-value">Καθορίζεται μαζί</span>
+                <span class="metric-value">Η διάρκεια διαφέρει</span>
               </div>
             </div>
 
             <div class="visual-card-bottom">
               <div class="badge">
                 <span class="badge-icon" aria-hidden="true">✓</span>
-                <span class="badge-text">Επιλέγετε υπηρεσία ή περιγράφετε το αίτημά σας, και σας καθοδηγώ στο σωστό ξεκίνημα.</span>
+                <span class="badge-text">Επιλέγετε υπηρεσία και κλείνετε ραντεβού.</span>
               </div>
               <div class="badge">
                 <span class="badge-icon" aria-hidden="true">✓</span>
-                <span class="badge-text">Σαφής επικοινωνία για το επόμενο βήμα, χωρίς πίεση.</span>
+                <span class="badge-text">Σαφής επικοινωνία για το επόμενο βήμα.</span>
               </div>
             </div>
 
@@ -245,22 +242,40 @@
             <p class="p">Το παιχνίδι ως μέσο έκφρασης και επούλωσης για τον εσωτερικό κόσμο του παιδιού.</p>
           </article>
 
-          <article class="card fade-in-section" role="listitem">
-            <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M12 4a7 7 0 107 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <path d="M12 9v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <h3 class="h3">Ατομικές Συνεδρίες Ενηλίκων</h3>
-            <p class="p">Στήριξη για άγχος, στρες, δυσκολίες στις σχέσεις και μεταβάσεις ζωής, με στόχο μια πιο καθαρή καθημερινότητα.</p>
-          </article>
-
         </div>
 
         <p class="sub" style="margin-top: 1rem;">
           Αν δεν είστε σίγουροι ποια επιλογή ταιριάζει, στείλτε μήνυμα και θα σας καθοδηγήσω.
         </p>
+
+        <!-- ✅ New CTA under the guidance line -->
+        <div class="services-cta">
+          <a class="btn btn--primary" href="#contact">Ζητήστε ραντεβού</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ NEW: SPACE / GALLERY SECTION FOR THE EXTRA IMAGES -->
+    <section class="section fade-in-section" id="space" aria-label="Ο χώρος">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="h2">Ο χώρος</h2>
+          <p class="sub">Μια ήρεμη αίσθηση, με λεπτομέρειες που υποστηρίζουν τη συνεδρία.</p>
+        </div>
+
+        <div class="space-grid" role="list">
+          <figure class="card fade-in-section space-card" role="listitem">
+            <img class="space-img" src="Image1-section4.png" alt="Λεπτομέρεια από τον χώρο" loading="lazy">
+          </figure>
+
+          <figure class="card fade-in-section space-card" role="listitem">
+            <img class="space-img" src="Image2-section4.png" alt="Λεπτομέρεια από τον χώρο" loading="lazy">
+          </figure>
+
+          <figure class="card fade-in-section space-card" role="listitem">
+            <img class="space-img" src="Image3-section4.png" alt="Λεπτομέρεια από τον χώρο" loading="lazy">
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -366,7 +381,7 @@
 
           <details class="faq">
             <summary>Ποιες υπηρεσίες προσφέρονται;</summary>
-            <div class="faq-body"><p class="p">Συμβουλευτική, Θεραπεία συμπεριφοράς (ABA), Παιγνιοθεραπεία και Ατομικές συνεδρίες ενηλίκων.</p></div>
+            <div class="faq-body"><p class="p">Συμβουλευτική, Θεραπεία συμπεριφοράς (ABA), Παιγνιοθεραπεία.</p></div>
           </details>
 
           <details class="faq">
@@ -416,7 +431,6 @@
               <span class="contact-value">Ρόδος</span>
             </div>
 
-            <!-- ✅ Social links (contact card) -->
             <div class="contact-item">
               <span class="contact-label">Social</span>
               <div class="contact-social">
@@ -425,11 +439,9 @@
                 <a class="btn btn--outline btn--sm" href="https://www.tiktok.com/@nikoleta.plati" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
               </div>
             </div>
-            <!-- /Social links -->
 
             <div class="divider"></div>
 
-            <!-- ✅ Functional form: opens email composer (no backend needed) -->
             <form class="contact-form" id="contactForm" action="#" method="POST">
               <div class="field">
                 <label class="field-label" for="name">Ονοματεπώνυμο</label>
@@ -452,9 +464,8 @@
 
               <div class="field">
                 <label class="field-label" for="service">Υπηρεσία</label>
-                <input class="input" id="service" name="service" list="servicesList" placeholder="π.χ. Ατομικές Συνεδρίες Ενηλίκων" required>
+                <input class="input" id="service" name="service" list="servicesList" placeholder="π.χ. Συμβουλευτική Γονέων" required>
                 <datalist id="servicesList">
-                  <option value="Ατομικές Συνεδρίες Ενηλίκων"></option>
                   <option value="Συμβουλευτική Γονέων"></option>
                   <option value="Θεραπεία Συμπεριφοράς (ΑΒΑ)"></option>
                   <option value="Παιγνιοθεραπεία"></option>
@@ -493,17 +504,30 @@
       <div class="container footer-inner">
         <p class="fine">© <span id="year"></span> Νικολέτα Πλατή</p>
 
-        <!-- ✅ Social links (footer) -->
-        <div class="footer-social" aria-label="Social links">
-          <a class="fine-link" href="https://www.instagram.com/nikoletaplati_psychologist/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
-          <span class="fine-sep" aria-hidden="true">•</span>
-          <a class="fine-link" href="https://www.facebook.com/Kentrologoumathisiskaisimperiforas/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
-          <span class="fine-sep" aria-hidden="true">•</span>
-          <a class="fine-link" href="https://www.tiktok.com/@nikoleta.plati" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
-        </div>
-        <!-- /Social links -->
-      </div>
+        <!-- ✅ Footer socials now match nav (same icons / same classes) -->
+        <div class="social footer-social-icons" aria-label="Social links">
+          <a class="social-link" href="https://www.instagram.com/nikoletaplati_psychologist/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7 3h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7a4 4 0 014-4z" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 16a4 4 0 110-8 4 4 0 010 8z" stroke="currentColor" stroke-width="2"/>
+              <path d="M17.5 6.5h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
 
+          <a class="social-link" href="https://www.facebook.com/Kentrologoumathisiskaisimperiforas/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v3H7v3h3v6h3v-6h3l1-3h-4v-3c0-.6.4-1 1-1z" fill="currentColor"/>
+            </svg>
+          </a>
+
+          <a class="social-link" href="https://www.tiktok.com/@nikoleta.plati" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M14 3v10.2a3.8 3.8 0 11-3-3.7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M14 7c1.1 1.6 2.7 2.6 4.6 2.7V7.2c-1.3-.1-2.5-.8-3.3-1.8-.5-.6-.9-1.5-1-2.4H14z" fill="currentColor" opacity=".92"/>
+            </svg>
+          </a>
+        </div>
+      </div>
     </footer>
 
   </main>
@@ -537,7 +561,6 @@
       expanded ? closeMenu() : openMenu();
     });
 
-    // Close on outside click/touch
     mobileNav.addEventListener("click", (e) => {
       if(e.target === mobileNav) closeMenu();
     });
@@ -579,7 +602,6 @@
       onScroll();
     })();
 
-    // ✅ Functional contact form without backend (opens email composer)
     (function(){
       const form = document.getElementById('contactForm');
       if(!form) return;

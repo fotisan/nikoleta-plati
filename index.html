@@ -32,11 +32,6 @@
 <body id="top">
   <a class="skip-link" href="#main">Μετάβαση στο κύριο περιεχόμενο</a>
 
-  <!-- ✅ DEMO NOTICE -->
-  <div class="demo-bar" role="note">
-    Demo template για portfolio. Τα στοιχεία επικοινωνίας και οι υπηρεσίες είναι ενδεικτική προσαρμογή.
-  </div>
-
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="Αρχική">
@@ -157,6 +152,7 @@
             <div class="hero-mini-card">
               <strong>Γρήγορη επιλογή υπηρεσίας</strong>
               <ul>
+                <li>Ατομικές Συνεδρίες Ενηλίκων</li>
                 <li>Συμβουλευτική Γονέων</li>
                 <li>Θεραπεία Συμπεριφοράς (ΑΒΑ)</li>
                 <li>Παιγνιοθεραπεία</li>
@@ -180,22 +176,22 @@
             <div class="visual-card-mid">
               <div class="metric">
                 <span class="metric-label">Υπηρεσίες</span>
-                <span class="metric-value">3 διαθέσιμες επιλογές</span>
+                <span class="metric-value">4 διαθέσιμες επιλογές</span>
               </div>
               <div class="metric">
                 <span class="metric-label">Διάρκεια</span>
-                <span class="metric-value">Η διάρκεια διαφέρει</span>
+                <span class="metric-value">Καθορίζεται μαζί</span>
               </div>
             </div>
 
             <div class="visual-card-bottom">
               <div class="badge">
                 <span class="badge-icon" aria-hidden="true">✓</span>
-                <span class="badge-text">Επιλέγετε υπηρεσία και κλείνετε ραντεβού.</span>
+                <span class="badge-text">Επιλέγετε υπηρεσία ή περιγράφετε το αίτημά σας, και σας καθοδηγώ στο σωστό ξεκίνημα.</span>
               </div>
               <div class="badge">
                 <span class="badge-icon" aria-hidden="true">✓</span>
-                <span class="badge-text">Σαφής επικοινωνία για το επόμενο βήμα.</span>
+                <span class="badge-text">Σαφής επικοινωνία για το επόμενο βήμα, χωρίς πίεση.</span>
               </div>
             </div>
 
@@ -249,7 +245,22 @@
             <p class="p">Το παιχνίδι ως μέσο έκφρασης και επούλωσης για τον εσωτερικό κόσμο του παιδιού.</p>
           </article>
 
+          <article class="card fade-in-section" role="listitem">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 4a7 7 0 107 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M12 9v4l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="h3">Ατομικές Συνεδρίες Ενηλίκων</h3>
+            <p class="p">Στήριξη για άγχος, στρες, δυσκολίες στις σχέσεις και μεταβάσεις ζωής, με στόχο μια πιο καθαρή καθημερινότητα.</p>
+          </article>
+
         </div>
+
+        <p class="sub" style="margin-top: 1rem;">
+          Αν δεν είστε σίγουροι ποια επιλογή ταιριάζει, στείλτε μήνυμα και θα σας καθοδηγήσω.
+        </p>
       </div>
     </section>
 
@@ -355,7 +366,7 @@
 
           <details class="faq">
             <summary>Ποιες υπηρεσίες προσφέρονται;</summary>
-            <div class="faq-body"><p class="p">Συμβουλευτική, Θεραπεία συμπεριφοράς (ABA) και Παιγνιοθεραπεία.</p></div>
+            <div class="faq-body"><p class="p">Συμβουλευτική, Θεραπεία συμπεριφοράς (ABA), Παιγνιοθεραπεία και Ατομικές συνεδρίες ενηλίκων.</p></div>
           </details>
 
           <details class="faq">
@@ -441,8 +452,9 @@
 
               <div class="field">
                 <label class="field-label" for="service">Υπηρεσία</label>
-                <input class="input" id="service" name="service" list="servicesList" placeholder="π.χ. Συμβουλευτική Γονέων" required>
+                <input class="input" id="service" name="service" list="servicesList" placeholder="π.χ. Ατομικές Συνεδρίες Ενηλίκων" required>
                 <datalist id="servicesList">
+                  <option value="Ατομικές Συνεδρίες Ενηλίκων"></option>
                   <option value="Συμβουλευτική Γονέων"></option>
                   <option value="Θεραπεία Συμπεριφοράς (ΑΒΑ)"></option>
                   <option value="Παιγνιοθεραπεία"></option>

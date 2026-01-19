@@ -613,7 +613,7 @@ svg{ display:block; }
   border-color: rgba(200,165,123,.35);
 }
 
-/* (1) Fix numbers so they are visible and not “covered” */
+/* Fix numbers so they are visible and not “covered” */
 #services .card::before{
   content: "";
   position: absolute;
@@ -632,7 +632,7 @@ svg{ display:block; }
 #services .card:nth-child(3)::before{ content:"03"; }
 #services .card:nth-child(4)::before{ content:"04"; }
 
-/* (2) Services “help” upgrade */
+/* Services “help” upgrade */
 .services-callout{
   margin-top: 16px;
   border-radius: var(--radius-lg);
@@ -676,8 +676,6 @@ svg{ display:block; }
   flex-wrap: wrap;
   gap: 10px;
 }
-.services-callout__icon{ display:none; }
-
 
 /* Help */
 .help-grid{ display:grid; gap: 14px; }
@@ -689,7 +687,7 @@ svg{ display:block; }
   padding: 18px;
 }
 
-/* (3) About with image */
+/* About with image */
 .about-grid{
   display:grid;
   gap: 14px;
@@ -768,7 +766,6 @@ svg{ display:block; }
 }
 .faq[open] summary::after{ content:"–"; }
 
-/* keep the opened answer as one body (no separator line) */
 .faq-body{
   padding: 0 16px 16px;
   border-top: 0;
@@ -855,6 +852,14 @@ svg{ display:block; }
   line-height: 1.6;
 }
 
+/* CHANGE (3): status line */
+.form-status{
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: rgba(31,29,26,.70);
+  min-height: 18px;
+}
+
 /* Social row inside contact card */
 .contact-social{
   display:flex;
@@ -937,6 +942,46 @@ svg{ display:block; }
   transform: translateY(0);
 }
 
+/* CHANGE (4): Floating buttons (πάνω από back-to-top) */
+.floating-stack{
+  position: fixed;
+  right: 18px;
+  bottom: 76px;
+  display: grid;
+  gap: 10px;
+  z-index: 61;
+}
+.floating-btn{
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(222,211,196,.95);
+  background: rgba(255,255,255,.82);
+  box-shadow: 0 12px 28px rgba(31,29,26,.12);
+  text-decoration: none;
+  transition: transform .18s ease, background .2s ease, border-color .2s ease;
+}
+.floating-btn svg{
+  width: 20px;
+  height: 20px;
+  opacity: .9;
+}
+.floating-btn:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.95);
+  border-color: rgba(200,165,123,.55);
+}
+.floating-btn--whatsapp{
+  background: rgba(127,174,160,.20);
+  border-color: rgba(127,174,160,.35);
+}
+.floating-btn--phone{
+  background: rgba(200,165,123,.18);
+  border-color: rgba(200,165,123,.35);
+}
+
 /* Responsive */
 @media (min-width: 860px){
   .nav{ display:flex; }
@@ -1001,19 +1046,4 @@ svg{ display:block; }
     transform: none !important;
   }
   .back-to-top{ transform: none !important; }
-}
-
-/* DEMO NOTICE (added) */
-.demo-bar{
-  position: sticky;
-  top: 0;
-  z-index: 60;
-  padding: 10px 14px;
-  text-align: center;
-  font-size: 12px;
-  font-weight: 780;
-  letter-spacing: .2px;
-  color: rgba(31,29,26,.82);
-  background: rgba(200,165,123,.14);
-  border-bottom: 1px solid rgba(200,165,123,.30);
 }

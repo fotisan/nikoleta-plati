@@ -982,6 +982,197 @@ svg{ display:block; }
   border-color: rgba(200,165,123,.35);
 }
 
+/* CHANGE (1): Hover / touch labels for the floating WhatsApp + Phone icons */
+.floating-btn[data-tooltip]{
+  position: relative;
+}
+.floating-btn[data-tooltip]::after{
+  content: attr(data-tooltip);
+  position: absolute;
+  right: 56px;
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+  opacity: 0;
+  pointer-events: none;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .01em;
+  color: rgba(31,29,26,.88);
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(222,211,196,.95);
+  background: rgba(255,255,255,.92);
+  box-shadow: 0 14px 30px rgba(31,29,26,.14);
+
+  transition: opacity .16s ease, transform .16s ease;
+  white-space: nowrap;
+}
+.floating-btn[data-tooltip]:hover::after,
+.floating-btn[data-tooltip]:focus-visible::after{
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Make the label visible on touch devices for clarity */
+@media (hover: none){
+  .floating-btn[data-tooltip]::after{
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+/* CHANGE (2): Call options modal (WhatsApp / Phone) */
+.contact-modal{
+  position: fixed;
+  inset: 0;
+  z-index: 95;
+  display: none;
+}
+.contact-modal.is-open{
+  display: block;
+}
+.contact-modal__backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 15, 14, .42);
+  backdrop-filter: blur(7px);
+}
+.contact-modal__dialog{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(.98);
+  width: min(520px, calc(100% - 32px));
+  border-radius: calc(var(--radius-lg) + 6px);
+  border: 1px solid rgba(222,211,196,.95);
+  background:
+    radial-gradient(900px 260px at 12% 0%, rgba(230,193,177,.18), transparent 60%),
+    radial-gradient(900px 320px at 95% 90%, rgba(127,174,160,.14), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.78));
+  box-shadow: 0 26px 70px rgba(16,15,14,.35);
+  padding: 18px;
+  opacity: 0;
+}
+.contact-modal.is-open .contact-modal__dialog{
+  animation: modalIn .22s ease forwards;
+}
+
+@keyframes modalIn{
+  from{ opacity: 0; transform: translate(-50%, -48%) scale(.98); }
+  to{ opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+.contact-modal__close{
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid rgba(222,211,196,.95);
+  background: rgba(255,255,255,.75);
+  box-shadow: 0 12px 28px rgba(31,29,26,.10);
+  color: rgba(31,29,26,.84);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: transform .16s ease, background .2s ease, border-color .2s ease;
+}
+.contact-modal__close:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.92);
+  border-color: rgba(200,165,123,.55);
+}
+
+.contact-modal__title{
+  margin: 0 0 4px;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -.3px;
+  color: rgba(31,29,26,.92);
+}
+.contact-modal__desc{
+  margin: 0 0 14px;
+  color: rgba(31,29,26,.75);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.contact-modal__actions{
+  display: grid;
+  gap: 10px;
+}
+
+.contact-choice{
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  border: 1px solid rgba(222,211,196,.95);
+  background: rgba(255,255,255,.78);
+  box-shadow: 0 14px 34px rgba(31,29,26,.10);
+  color: rgba(31,29,26,.90);
+  transition: transform .16s ease, background .2s ease, border-color .2s ease;
+}
+.contact-choice:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.92);
+  border-color: rgba(200,165,123,.55);
+}
+.contact-choice__icon{
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(222,211,196,.95);
+  background: rgba(255,255,255,.80);
+  overflow: hidden;
+}
+.contact-choice__icon svg{
+  width: 22px;
+  height: 22px;
+  opacity: .92;
+  transform: translateY(6px) scale(.92);
+  opacity: 0;
+}
+.contact-modal.is-open .contact-choice__icon svg{
+  animation: iconPop .38s cubic-bezier(.2,.9,.2,1) forwards;
+}
+.contact-choice:nth-child(2) .contact-choice__icon svg{
+  animation-delay: .04s;
+}
+@keyframes iconPop{
+  from{ opacity: 0; transform: translateY(10px) scale(.88); }
+  to{ opacity: .95; transform: translateY(0) scale(1); }
+}
+
+.contact-choice__label{
+  display: block;
+  font-weight: 850;
+  letter-spacing: -.1px;
+}
+.contact-choice__meta{
+  display: block;
+  margin-top: 1px;
+  font-size: 13px;
+  color: rgba(31,29,26,.70);
+}
+
+.contact-choice--whatsapp .contact-choice__icon{
+  border-color: rgba(127,174,160,.38);
+  background: rgba(127,174,160,.18);
+}
+.contact-choice--phone .contact-choice__icon{
+  border-color: rgba(200,165,123,.38);
+  background: rgba(200,165,123,.16);
+}
+
 /* Responsive */
 @media (min-width: 860px){
   .nav{ display:flex; }

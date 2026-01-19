@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="el">
 <head>
@@ -28,6 +27,79 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css?v=1" />
+
+  <!-- ✅ PATCH CSS (μόνο για τις ζητούμενες αλλαγές, χωρίς να πειράξουμε το styles.css) -->
+  <style>
+    /* (2) Services cards: 2 ανά σειρά σε desktop, μόνο στο #services */
+    @media (min-width: 900px){
+      #services .cards-grid{
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+    }
+
+    /* (2) CTA κάτω από το help text στο Services */
+    .services-help{
+      margin-top: 1rem;
+      display: flex;
+      gap: .75rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .services-help .btn{ white-space: nowrap; }
+
+    /* (3) Practice space gallery (Image1/2/3-section4.png) */
+    .practice-grid{
+      display: grid;
+      gap: 1rem;
+      align-items: stretch;
+    }
+    @media (min-width: 900px){
+      .practice-grid{
+        grid-template-columns: 1.35fr 1fr;
+      }
+    }
+    .practice-stack{
+      display: grid;
+      gap: 1rem;
+    }
+    .practice-media{
+      border-radius: 18px;
+      overflow: hidden;
+      position: relative;
+    }
+    .practice-media img{
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .practice-media--big{
+      aspect-ratio: 16 / 10;
+      min-height: 320px;
+    }
+    .practice-media--small{
+      aspect-ratio: 16 / 10;
+      min-height: 180px;
+    }
+
+    /* (4) FAQ: να μην φαίνεται “γραμμή” ανάμεσα σε summary και body όταν ανοίγει */
+    .faq summary{
+      border-bottom: 0 !important;
+      box-shadow: none !important;
+    }
+    .faq .faq-body{
+      border-top: 0 !important;
+      box-shadow: none !important;
+      margin-top: 0 !important;
+    }
+    .faq summary::before,
+    .faq summary::after,
+    .faq .faq-body::before,
+    .faq .faq-body::after{
+      content: none !important;
+      display: none !important;
+    }
+  </style>
 </head>
 
 <body id="top">
@@ -177,11 +249,11 @@
             <div class="visual-card-mid">
               <div class="metric">
                 <span class="metric-label">Υπηρεσίες</span>
-                <span class="metric-value">4 διαθέσιμες επιλογές</span>
+                <span class="metric-value">Ενήλικες, γονείς &amp; παιδιά</span>
               </div>
               <div class="metric">
                 <span class="metric-label">Διάρκεια</span>
-                <span class="metric-value">Καθορίζεται μαζί</span>
+                <span class="metric-value">60 λεπτά</span>
               </div>
             </div>
 
@@ -262,6 +334,11 @@
         <p class="sub" style="margin-top: 1rem;">
           Αν δεν είστε σίγουροι ποια επιλογή ταιριάζει, στείλτε μήνυμα και θα σας καθοδηγήσω.
         </p>
+
+        <div class="services-help">
+          <a class="btn btn--primary" href="#contact">Στείλτε μήνυμα</a>
+          <a class="btn btn--outline" href="tel:+306949626413">Κλήση</a>
+        </div>
       </div>
     </section>
 
@@ -273,6 +350,31 @@
           <p class="sub">
             Πιστεύω ότι η θεραπεία δεν είναι απλώς η επίλυση ενός προβλήματος, αλλά η δημιουργία μιας ασφαλούς σχέσης όπου μπορείτε να ακουστείτε. Στο γραφείο μου στη Ρόδο, συνδυάζω την επιστημονική κατάρτιση με την ανθρώπινη ενσυναίσθηση για να υποστηρίξω εσάς και την οικογένειά σας.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRACTICE SPACE (added photos) -->
+    <section class="section fade-in-section" aria-label="Ο χώρος">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="h2">Ο χώρος</h2>
+          <p class="sub">Ένα ήρεμο περιβάλλον, σχεδιασμένο για να νιώσετε άνεση από την πρώτη στιγμή.</p>
+        </div>
+
+        <div class="practice-grid">
+          <div class="practice-media practice-media--big">
+            <img src="Image1-section4.png" alt="Ο χώρος συνεδρίας" loading="lazy">
+          </div>
+
+          <div class="practice-stack">
+            <div class="practice-media practice-media--small">
+              <img src="Image2-section4.png" alt="Λεπτομέρεια χώρου" loading="lazy">
+            </div>
+            <div class="practice-media practice-media--small">
+              <img src="Image3-section4.png" alt="Ατμόσφαιρα γραφείου" loading="lazy">
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -362,7 +464,7 @@
         <div class="faq-grid">
           <details class="faq">
             <summary>Πόση είναι η διάρκεια των συνεδριών;</summary>
-            <div class="faq-body"><p class="p">Η διάρκεια διαφέρει, ανάλογα με την υπηρεσία.</p></div>
+            <div class="faq-body"><p class="p">Η διάρκεια είναι 60 λεπτά.</p></div>
           </details>
 
           <details class="faq">

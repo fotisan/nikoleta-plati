@@ -616,6 +616,7 @@ svg{ display:block; }
   border-radius: 24px;
   border: 1px solid rgba(0,0,0,0.05);
   background: rgba(255,255,255,.86);
+  min-height: 220px;
   transition: transform .38s cubic-bezier(0.165, 0.84, 0.44, 1),
               box-shadow .38s cubic-bezier(0.165, 0.84, 0.44, 1),
               border-color .25s ease;
@@ -630,6 +631,7 @@ svg{ display:block; }
 #services .card::before{
   content: "";
   position: absolute;
+  z-index: 0;
   right: 16px;
   top: 14px;
   font-family: var(--font-serif);
@@ -644,6 +646,11 @@ svg{ display:block; }
 #services .card:nth-child(2)::before{ content:"02"; }
 #services .card:nth-child(3)::before{ content:"03"; }
 #services .card:nth-child(4)::before{ content:"04"; }
+
+#services .card > *{
+  position: relative;
+  z-index: 1;
+}
 
 /* (2) Services “help” upgrade */
 .services-callout{
@@ -962,6 +969,10 @@ svg{ display:block; }
 
   .cards-grid{ grid-template-columns: repeat(3, 1fr); gap: 16px; }
 
+  #services .cards-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .faq-grid{ grid-template-columns: 1fr 1fr; gap: 14px; }
 
   .contact-grid{
@@ -995,13 +1006,6 @@ svg{ display:block; }
     align-items: stretch;
   }
   .about-media{ min-height: 380px; }
-}
-
-/* Keep Services cards 2 per row on desktop (only in services section) */
-@media (min-width: 900px){
-  #services .cards-grid{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (prefers-reduced-motion: reduce){
@@ -1637,6 +1641,7 @@ svg{ display:block; }
   border-radius: 24px;
   border: 1px solid rgba(0,0,0,0.05);
   background: rgba(255,255,255,.86);
+  min-height: 220px;
   transition: transform .38s cubic-bezier(0.165, 0.84, 0.44, 1),
               box-shadow .38s cubic-bezier(0.165, 0.84, 0.44, 1),
               border-color .25s ease;
@@ -1649,6 +1654,7 @@ svg{ display:block; }
 #services .card::before{
   content: "";
   position: absolute;
+  z-index: 0;
   right: 18px;
   bottom: 10px;
   font-family: var(--font-serif);
@@ -1930,6 +1936,10 @@ svg{ display:block; }
   .visual-card-mid{ grid-template-columns: 1fr 1fr; }
 
   .cards-grid{ grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+  #services .cards-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
   .faq-grid{ grid-template-columns: 1fr 1fr; gap: 14px; }
 

@@ -19,6 +19,31 @@
   <meta property="og:description" content="Ψυχολογικές υπηρεσίες στη Ρόδο. Επιλέξτε υπηρεσία και ζητήστε να κλείσετε ραντεβού." />
   <meta property="og:image" content="Hero-section.png" />
 
+  <!-- JSON-LD Schema Markup (added) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["MedicalBusiness", "Psychologist"],
+    "name": "Νικολέτα Πλατή",
+    "image": "https://example.com/Hero-section.png",
+    "url": "https://example.com/",
+    "telephone": "+306949626413",
+    "email": "nicoletaplath@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Στεφάνου Καζούλη 18",
+      "addressLocality": "Ρόδος",
+      "addressCountry": "GR"
+    },
+    "areaServed": "Ρόδος",
+    "sameAs": [
+      "https://www.instagram.com/nikoletaplati_psychologist/",
+      "https://www.facebook.com/Kentrologoumathisiskaisimperiforas/",
+      "https://www.tiktok.com/@nikoleta.plati"
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -250,6 +275,7 @@
 
         <!-- (2) Upgraded “help” area -->
         <div class="services-callout" role="note" aria-label="Βοήθεια επιλογής υπηρεσίας">
+          <div class="services-callout__icon" aria-hidden="true">✦</div>
 
           <div class="services-callout__content">
             <p class="services-callout__title">Δεν είστε σίγουροι ποια επιλογή ταιριάζει;</p>
@@ -276,6 +302,8 @@
               <h2 class="h2">Σχετικά</h2>
               <p class="sub">
                 Πιστεύω ότι η θεραπεία δεν είναι απλώς η επίλυση ενός προβλήματος, αλλά η δημιουργία μιας ασφαλούς σχέσης όπου μπορείτε να ακουστείτε. Στο γραφείο μου στη Ρόδο, συνδυάζω την επιστημονική κατάρτιση με την ανθρώπινη ενσυναίσθηση για να υποστηρίξω εσάς και την οικογένειά σας.
+                <br><br>
+                Ο λόγος που επέλεξα αυτόν τον δρόμο είναι απλός: με ενδιαφέρει να υπάρχει ένας χώρος όπου τα δύσκολα μπορούν να ειπωθούν χωρίς φόβο, ντροπή ή βιασύνη. Στόχος μου είναι να νιώθετε ότι έχετε δίπλα σας έναν άνθρωπο που σας καταλαβαίνει, και ταυτόχρονα ένα σταθερό, επαγγελματικό πλαίσιο που σας βοηθά να προχωρήσετε με καθαρά βήματα.
               </p>
             </div>
           </div>
@@ -525,6 +553,9 @@
           </div>
 
           <div class="map-card" aria-label="Χάρτης">
+            <!-- ΣΗΜΑΝΤΙΚΟ για Local SEO:
+                 Αντικατάστησε το src με το πραγματικό Google Maps "Embed a map" URL της επιχείρησης
+                 (μοιάζει με: https://www.google.com/maps/embed?pb=... ) -->
             <iframe
               title="Χάρτης"
               loading="lazy"

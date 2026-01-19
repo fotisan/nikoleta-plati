@@ -676,6 +676,8 @@ svg{ display:block; }
   flex-wrap: wrap;
   gap: 10px;
 }
+.services-callout__icon{ display:none; }
+
 
 /* Help */
 .help-grid{ display:grid; gap: 14px; }

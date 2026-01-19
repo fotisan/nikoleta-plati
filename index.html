@@ -19,7 +19,7 @@
   <meta property="og:description" content="Ψυχολογικές υπηρεσίες στη Ρόδο. Επιλέξτε υπηρεσία και ζητήστε να κλείσετε ραντεβού." />
   <meta property="og:image" content="Hero-section.png" />
 
-  <!-- JSON-LD Schema Markup (added) -->
+  <!-- JSON-LD Schema Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -273,7 +273,6 @@
 
         </div>
 
-        <!-- (2) Upgraded “help” area -->
         <div class="services-callout" role="note" aria-label="Βοήθεια επιλογής υπηρεσίας">
           <div class="services-callout__icon" aria-hidden="true">✦</div>
 
@@ -300,10 +299,14 @@
           <div class="about-copy">
             <div class="section-head">
               <h2 class="h2">Σχετικά</h2>
+
+              <!-- CHANGE (1): πιο ανθρώπινο, παιδοκεντρικό, με “γιατί” -->
               <p class="sub">
-                Πιστεύω ότι η θεραπεία δεν είναι απλώς η επίλυση ενός προβλήματος, αλλά η δημιουργία μιας ασφαλούς σχέσης όπου μπορείτε να ακουστείτε. Στο γραφείο μου στη Ρόδο, συνδυάζω την επιστημονική κατάρτιση με την ανθρώπινη ενσυναίσθηση για να υποστηρίξω εσάς και την οικογένειά σας.
+                Υπάρχουν στιγμές που ένα παιδί δεν μπορεί να πει με λόγια αυτό που νιώθει. Το δείχνει στη συμπεριφορά του, στο σώμα του, στο παιχνίδι του. Και τότε, ο ρόλος μας δεν είναι να το πιέσουμε να “εξηγήσει”, αλλά να του δώσουμε έναν ασφαλή τρόπο να εκφραστεί.
                 <br><br>
-                Ο λόγος που επέλεξα αυτόν τον δρόμο είναι απλός: με ενδιαφέρει να υπάρχει ένας χώρος όπου τα δύσκολα μπορούν να ειπωθούν χωρίς φόβο, ντροπή ή βιασύνη. Στόχος μου είναι να νιώθετε ότι έχετε δίπλα σας έναν άνθρωπο που σας καταλαβαίνει, και ταυτόχρονα ένα σταθερό, επαγγελματικό πλαίσιο που σας βοηθά να προχωρήσετε με καθαρά βήματα.
+                Αυτό είναι και το “γιατί” μου. Επέλεξα να δουλεύω με παιδιά και οικογένειες γιατί πιστεύω ότι η αλλαγή γίνεται πιο ουσιαστική όταν το παιδί νιώσει πρώτα ασφάλεια. Μέσα από την Παιγνιοθεραπεία, και με την δομή της ABA όταν χρειάζεται, δημιουργούμε ένα πλαίσιο που βοηθά το παιδί να χτίσει δεξιότητες, να μειώσει την ένταση, να επικοινωνήσει καλύτερα και να προχωρήσει με τον δικό του ρυθμό.
+                <br><br>
+                Για τους γονείς, ο στόχος δεν είναι να “κάνετε τα πάντα τέλεια”. Είναι να έχετε καθοδήγηση, ξεκάθαρα βήματα και μια σταθερή συνεργασία, ώστε το σπίτι να γίνει πιο ήρεμο και προβλέψιμο. Εδώ, θα ακουστείτε με σεβασμό και θα δουλέψουμε μαζί, πρακτικά, χωρίς κριτική.
               </p>
             </div>
           </div>
@@ -438,7 +441,7 @@
 
         <div class="faq-grid">
           <details class="faq">
-            <summary>Πόση είναι η διάρκεια των συνεδριών;</summary>
+            <summary>Πόση είναι η διάρκεια των συνεδδριών;</summary>
             <div class="faq-body"><p class="p">Η διάρκεια είναι 60 λεπτά.</p></div>
           </details>
 
@@ -505,7 +508,13 @@
 
             <div class="divider"></div>
 
-            <form class="contact-form" id="contactForm" action="#" method="POST">
+            <!-- CHANGE (3): Αφαιρέθηκε mailto. Χρησιμοποιείται Formspree endpoint. -->
+            <form
+              class="contact-form"
+              id="contactForm"
+              action="https://formspree.io/f/your-form-id"
+              method="POST"
+            >
               <div class="field">
                 <label class="field-label" for="name">Ονοματεπώνυμο</label>
                 <input class="input" id="name" name="name" autocomplete="name" required>
@@ -549,18 +558,20 @@
               <p class="form-note">
                 Στο μήνυμα γράψτε και την υπηρεσία που θέλετε και ό,τι θεωρείτε χρήσιμο για να οργανωθεί το ραντεβού.
               </p>
+
+              <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
             </form>
           </div>
 
           <div class="map-card" aria-label="Χάρτης">
-            <!-- ΣΗΜΑΝΤΙΚΟ για Local SEO:
-                 Αντικατάστησε το src με το πραγματικό Google Maps "Embed a map" URL της επιχείρησης
-                 (μοιάζει με: https://www.google.com/maps/embed?pb=... ) -->
+            <!-- CHANGE (2): Βάλε εδώ το πραγματικό Google Maps embed (Embed a map) URL.
+                 Πήγαινε Google Maps -> Share -> Embed a map -> Copy HTML και πάρε το src (pb=...).
+                 Το src πρέπει να μοιάζει με: https://www.google.com/maps/embed?pb=... -->
             <iframe
               title="Χάρτης"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=%CE%A3%CF%84%CE%B5%CF%86%CE%AC%CE%BD%CE%BF%CF%85%20%CE%9A%CE%B1%CE%B6%CE%BF%CF%8D%CE%BB%CE%B7%2018%2C%20%CE%A1%CF%8C%CE%B4%CE%BF%CF%82%2C%20Greece&z=16&output=embed">
+              src="https://www.google.com/maps/embed?pb=PASTE_YOUR_REAL_EMBED_CODE_HERE">
             </iframe>
           </div>
         </div>
@@ -571,7 +582,6 @@
       <div class="container footer-inner">
         <p class="fine">© <span id="year"></span> Νικολέτα Πλατή</p>
 
-        <!-- (5) Footer social = ίδια icons/στυλ με nav -->
         <div class="footer-social" aria-label="Social links">
           <a class="social-link" href="https://www.instagram.com/nikoletaplati_psychologist/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -598,6 +608,22 @@
     </footer>
 
   </main>
+
+  <!-- CHANGE (4): Floating buttons (WhatsApp + Phone) κάτω δεξιά -->
+  <div class="floating-stack" aria-label="Γρήγορη επικοινωνία">
+    <a class="floating-btn floating-btn--whatsapp" href="https://wa.me/306949626413" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M20 11.7c0 4.5-3.8 8.1-8.4 8.1-1.4 0-2.8-.3-4-.9L4 20l1.2-3.3c-.7-1.1-1.1-2.4-1.1-3.7C4.1 8.5 7.9 4.9 12.5 4.9S20 7.2 20 11.7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M9.7 9.2c.2-.4.4-.5.7-.5h.5c.2 0 .5.1.7.5l.6 1.3c.1.3.1.5 0 .7l-.3.5c-.1.2-.2.4 0 .7.2.5.7 1.3 1.5 2 .8.7 1.6 1.1 2.1 1.3.3.1.5 0 .7-.2l.5-.6c.2-.2.4-.3.7-.2l1.4.5c.4.1.5.4.5.6v.7c0 .3-.2.7-.6.9-.4.2-1 .5-2.1.5-1.2 0-2.6-.4-4.2-1.6-2-1.5-3.3-3.5-3.6-4.2-.3-.7-.3-1.3-.2-1.7.1-.4.4-1 .6-1.2z" fill="currentColor" opacity=".92"/>
+      </svg>
+    </a>
+
+    <a class="floating-btn floating-btn--phone" href="tel:+306949626413" aria-label="Κλήση">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M8.5 5.8l1.2 2.6c.2.4.1.9-.2 1.2l-1 1c1.1 2 2.8 3.7 4.8 4.8l1-1c.3-.3.8-.4 1.2-.2l2.6 1.2c.5.2.7.7.6 1.2l-.5 2c-.1.5-.6.8-1.1.8C10 20 4 14 4 6.4c0-.5.3-1 .8-1.1l2-.5c.5-.1 1 .1 1.2.6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
 
   <button class="back-to-top" type="button" aria-label="Πάνω" title="Πάνω">
     ↑
@@ -669,30 +695,38 @@
       onScroll();
     })();
 
+    /* CHANGE (3): Formspree async submit (χωρίς mailto). */
     (function(){
       const form = document.getElementById('contactForm');
+      const statusEl = document.getElementById('formStatus');
       if(!form) return;
 
-      form.addEventListener('submit', (e) => {
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const name = (document.getElementById('name')?.value || '').trim();
-        const phone = (document.getElementById('phone')?.value || '').trim();
-        const service = (document.getElementById('service')?.value || '').trim();
-        const msg = (document.getElementById('msg')?.value || '').trim();
+        if(statusEl) statusEl.textContent = "Αποστολή...";
 
-        const subject = encodeURIComponent('Αίτημα για ραντεβού');
-        const body = encodeURIComponent(
-          `Ονοματεπώνυμο: ${name}\n` +
-          `Τηλέφωνο: ${phone}\n` +
-          `Υπηρεσία: ${service}\n\n` +
-          `Μήνυμα:\n${msg}`
-        );
+        try{
+          const formData = new FormData(form);
 
-        window.location.href = `mailto:nicoletaplath@gmail.com?subject=${subject}&body=${body}`;
+          const res = await fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: { "Accept": "application/json" }
+          });
+
+          if(res.ok){
+            if(statusEl) statusEl.textContent = "Το μήνυμα στάλθηκε. Θα επικοινωνήσω μαζί σας σύντομα.";
+            form.reset();
+            return;
+          }
+
+          if(statusEl) statusEl.textContent = "Κάτι πήγε στραβά. Δοκιμάστε ξανά ή καλέστε στο 694 962 6413.";
+        }catch(err){
+          if(statusEl) statusEl.textContent = "Δεν ήταν δυνατή η αποστολή. Δοκιμάστε ξανά ή καλέστε στο 694 962 6413.";
+        }
       });
     })();
   </script>
 </body>
 </html>
-

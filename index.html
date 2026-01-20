@@ -318,7 +318,6 @@
           </div>
 
           <figure class="about-media">
-            <!-- CHANGE: .jpg -> .png -->
             <img src="about-portrait.png" alt="Η Νικολέτα Πλατή στον χώρο συνεδριών" loading="lazy">
           </figure>
         </div>
@@ -470,7 +469,6 @@
           </div>
 
           <figure class="faq-media" aria-label="Εικόνα ενότητας FAQ">
-            <!-- CHANGE: .jpg -> .png -->
             <img src="faq-image.png" alt="Ήρεμη λεπτομέρεια του χώρου συνεδριών" loading="lazy">
           </figure>
         </div>
@@ -486,97 +484,109 @@
           <p class="sub">Επιλέξτε υπηρεσία και στείλτε μήνυμα για να κλείσετε ραντεβού.</p>
         </div>
 
+        <!-- CHANGE: Δομή ώστε στο desktop το 1ο πλαίσιο να χωρίζεται σε αριστερά/δεξιά και ο χάρτης να έρχεται κάτω -->
         <div class="contact-grid">
-          <div class="contact-card">
-            <div class="contact-cover">
-              <img src="Image-contact.png" alt="Χώρος" loading="lazy">
-            </div>
+          <div class="contact-card contact-card--split">
+            <div class="contact-split">
 
-            <div class="contact-item">
-              <span class="contact-label">Διεύθυνση</span>
-              <span class="contact-value">Στεφάνου Καζούλη 18, Ρόδος, Ελλάδα</span>
-            </div>
+              <!-- Left (μέχρι τα socials) -->
+              <div class="contact-split-left">
+                <div class="contact-cover">
+                  <img src="Image-contact.png" alt="Χώρος" loading="lazy">
+                </div>
 
-            <div class="contact-item">
-              <span class="contact-label">Κινητό</span>
-              <a class="link contact-value" href="tel:+306949626413">694 962 6413</a>
-            </div>
+                <div class="contact-item">
+                  <span class="contact-label">Διεύθυνση</span>
+                  <span class="contact-value">Στεφάνου Καζούλη 18, Ρόδος, Ελλάδα</span>
+                </div>
 
-            <div class="contact-item">
-              <span class="contact-label">Email</span>
-              <a class="link contact-value" href="mailto:nicoletaplath@gmail.com">nicoletaplath@gmail.com</a>
-            </div>
+                <div class="contact-item">
+                  <span class="contact-label">Κινητό</span>
+                  <a class="link contact-value" href="tel:+306949626413">694 962 6413</a>
+                </div>
 
-            <div class="contact-item">
-              <span class="contact-label">Περιοχή εξυπηρέτησης</span>
-              <span class="contact-value">Ρόδος</span>
-            </div>
+                <div class="contact-item">
+                  <span class="contact-label">Email</span>
+                  <a class="link contact-value" href="mailto:nicoletaplath@gmail.com">nicoletaplath@gmail.com</a>
+                </div>
 
-            <div class="contact-item">
-              <span class="contact-label">Social</span>
-              <div class="contact-social">
-                <a class="btn btn--outline btn--sm" href="https://www.instagram.com/nikoletaplati_psychologist/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
-                <a class="btn btn--outline btn--sm" href="https://www.facebook.com/Kentrologoumathisiskaisimperiforas/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
-                <a class="btn btn--outline btn--sm" href="https://www.tiktok.com/@nikoleta.plati" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
-              </div>
-            </div>
+                <div class="contact-item">
+                  <span class="contact-label">Περιοχή εξυπηρέτησης</span>
+                  <span class="contact-value">Ρόδος</span>
+                </div>
 
-            <div class="divider"></div>
-
-            <form
-              class="contact-form"
-              id="contactForm"
-              action="https://formspree.io/f/your-form-id"
-              method="POST"
-            >
-              <div class="field">
-                <label class="field-label" for="name">Ονοματεπώνυμο</label>
-                <input class="input" id="name" name="name" autocomplete="name" required>
+                <div class="contact-item">
+                  <span class="contact-label">Social</span>
+                  <div class="contact-social">
+                    <a class="btn btn--outline btn--sm" href="https://www.instagram.com/nikoletaplati_psychologist/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+                    <a class="btn btn--outline btn--sm" href="https://www.facebook.com/Kentrologoumathisiskaisimperiforas/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+                    <a class="btn btn--outline btn--sm" href="https://www.tiktok.com/@nikoleta.plati" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
+                  </div>
+                </div>
               </div>
 
-              <div class="field">
-                <label class="field-label" for="phone">Τηλέφωνο</label>
-                <input
-                  class="input"
-                  id="phone"
-                  name="phone"
-                  autocomplete="tel"
-                  inputmode="tel"
-                  required
-                  pattern="^[0-9+\\s().-]{8,}$"
-                  title="Παρακαλώ γράψτε ένα έγκυρο τηλέφωνο (τουλάχιστον 8 χαρακτήρες)."
+              <!-- Right (τα υπόλοιπα) -->
+              <div class="contact-split-right">
+                <div class="divider"></div>
+
+                <form
+                  class="contact-form"
+                  id="contactForm"
+                  action="https://formspree.io/f/your-form-id"
+                  method="POST"
                 >
+                  <div class="field">
+                    <label class="field-label" for="name">Ονοματεπώνυμο</label>
+                    <input class="input" id="name" name="name" autocomplete="name" required>
+                  </div>
+
+                  <div class="field">
+                    <label class="field-label" for="phone">Τηλέφωνο</label>
+                    <input
+                      class="input"
+                      id="phone"
+                      name="phone"
+                      autocomplete="tel"
+                      inputmode="tel"
+                      required
+                      pattern="^[0-9+\\s().-]{8,}$"
+                      title="Παρακαλώ γράψτε ένα έγκυρο τηλέφωνο (τουλάχιστον 8 χαρακτήρες)."
+                    >
+                  </div>
+
+                  <div class="field">
+                    <label class="field-label" for="service">Υπηρεσία</label>
+                    <input class="input" id="service" name="service" list="servicesList" placeholder="π.χ. Ατομικές Συνεδρίες Ενηλίκων" required>
+                    <datalist id="servicesList">
+                      <option value="Ατομικές Συνεδρίες Ενηλίκων"></option>
+                      <option value="Συμβουλευτική Γονέων"></option>
+                      <option value="Θεραπεία Συμπεριφοράς (ΑΒΑ)"></option>
+                      <option value="Παιγνιοθεραπεία"></option>
+                    </datalist>
+                  </div>
+
+                  <div class="field">
+                    <label class="field-label" for="msg">Μήνυμα</label>
+                    <textarea class="textarea" id="msg" name="message" required></textarea>
+                  </div>
+
+                  <div class="form-actions">
+                    <button class="btn btn--primary" type="submit">Αποστολή</button>
+                    <a class="btn btn--outline js-call-cta" href="tel:+306949626413">Κλήση</a>
+                  </div>
+
+                  <p class="form-note">
+                    Στο μήνυμα γράψτε και την υπηρεσία που θέλετε και ό,τι θεωρείτε χρήσιμο για να οργανωθεί το ραντεβού.
+                  </p>
+
+                  <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+                </form>
               </div>
 
-              <div class="field">
-                <label class="field-label" for="service">Υπηρεσία</label>
-                <input class="input" id="service" name="service" list="servicesList" placeholder="π.χ. Ατομικές Συνεδρίες Ενηλίκων" required>
-                <datalist id="servicesList">
-                  <option value="Ατομικές Συνεδρίες Ενηλίκων"></option>
-                  <option value="Συμβουλευτική Γονέων"></option>
-                  <option value="Θεραπεία Συμπεριφοράς (ΑΒΑ)"></option>
-                  <option value="Παιγνιοθεραπεία"></option>
-                </datalist>
-              </div>
-
-              <div class="field">
-                <label class="field-label" for="msg">Μήνυμα</label>
-                <textarea class="textarea" id="msg" name="message" required></textarea>
-              </div>
-
-              <div class="form-actions">
-                <button class="btn btn--primary" type="submit">Αποστολή</button>
-                <a class="btn btn--outline js-call-cta" href="tel:+306949626413">Κλήση</a>
-              </div>
-
-              <p class="form-note">
-                Στο μήνυμα γράψτε και την υπηρεσία που θέλετε και ό,τι θεωρείτε χρήσιμο για να οργανωθεί το ραντεβού.
-              </p>
-
-              <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-            </form>
+            </div>
           </div>
 
+          <!-- Map κάτω -->
           <div class="map-card" aria-label="Χάρτης">
             <iframe
               title="Χάρτης"

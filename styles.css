@@ -2,7 +2,7 @@
 /* Local fonts (WOFF2) */
 @font-face{
   font-family: "Inter";
-  src: url("Inter-roman.var.woff2") format("woff2-variations");
+  src: url("Inter-roman.var.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -10,7 +10,7 @@
 
 @font-face{
   font-family: "Inter";
-  src: url("Inter-italic-var.woff2") format("woff2-variations");
+  src: url("Inter-italic-var.woff2") format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -1343,4 +1343,3 @@ svg{ display:block; }
   }
   .back-to-top{ transform: none !important; }
 }
-``` :contentReference[oaicite:0]{index=0}

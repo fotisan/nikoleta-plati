@@ -765,12 +765,16 @@ svg{ display:block; }
 }
 .faq[open] summary::after{ content:"–"; }
 
+/* CHANGE (3): κανένα “κενό” όταν είναι κλειστό */
 .faq-body{
-  padding: 0 16px 16px;
+  padding: 0 16px 0;
   border-top: 0;
 }
+.faq[open] .faq-body{
+  padding: 0 16px 16px;
+}
 
-/* CHANGE (2): νέο layout FAQ + media πλαίσιο */
+/* FAQ layout + media */
 .faq-wrap{
   display: grid;
   gap: 14px;
@@ -778,7 +782,7 @@ svg{ display:block; }
 }
 .faq-list{
   display: grid;
-  gap: 12px; /* πάντα 1 κάτω από το άλλο */
+  gap: 12px;
 }
 .faq-media{
   margin: 0;
@@ -998,6 +1002,12 @@ svg{ display:block; }
   background: rgba(255,255,255,.95);
   border-color: rgba(200,165,123,.55);
 }
+
+.floating-btn--viber{
+  background: rgba(162,115,255,.16);
+  border-color: rgba(162,115,255,.28);
+}
+
 .floating-btn--whatsapp{
   background: rgba(127,174,160,.20);
   border-color: rgba(127,174,160,.35);
@@ -1039,7 +1049,7 @@ svg{ display:block; }
   transform: translateY(-50%) translateX(0);
 }
 
-/* CHANGE (1): Στις κινητές συσκευές εμφανίζεται μόνο όταν μπει class από JS */
+/* Στις touch συσκευές εμφανίζεται όταν μπει class από JS */
 .floating-btn.is-tooltip-open::after{
   opacity: 1;
   transform: translateY(-50%) translateX(0);
@@ -1170,6 +1180,9 @@ svg{ display:block; }
 .contact-choice:nth-child(2) .contact-choice__icon svg{
   animation-delay: .04s;
 }
+.contact-choice:nth-child(3) .contact-choice__icon svg{
+  animation-delay: .08s;
+}
 @keyframes iconPop{
   from{ opacity: 0; transform: translateY(10px) scale(.88); }
   to{ opacity: .95; transform: translateY(0) scale(1); }
@@ -1187,6 +1200,10 @@ svg{ display:block; }
   color: rgba(31,29,26,.70);
 }
 
+.contact-choice--viber .contact-choice__icon{
+  border-color: rgba(162,115,255,.32);
+  background: rgba(162,115,255,.16);
+}
 .contact-choice--whatsapp .contact-choice__icon{
   border-color: rgba(127,174,160,.38);
   background: rgba(127,174,160,.18);
@@ -1242,12 +1259,15 @@ svg{ display:block; }
   }
   .about-media{ min-height: 380px; }
 
-  /* CHANGE (2): FAQ με εικόνα δίπλα στο desktop */
+  /* FAQ with image on desktop */
   .faq-wrap{
     grid-template-columns: 1fr .9fr;
     align-items: stretch;
   }
-  .faq-media{ min-height: 420px; }
+  .faq-media{
+    min-height: 360px;
+    max-height: 520px;
+  }
 }
 
 /* Keep Services cards 2 per row on desktop (only in services section) */

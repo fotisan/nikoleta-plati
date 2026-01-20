@@ -1245,11 +1245,50 @@ svg{ display:block; }
 
   .cards-grid{ grid-template-columns: repeat(3, 1fr); gap: 16px; }
 
+  /* CHANGE: Contact layout on desktop
+     1) Το “πρώτο πλαίσιο” (.contact-card) γίνεται 2 στήλες:
+        αριστερά μέχρι τα socials, δεξιά όλα τα υπόλοιπα (φόρμα).
+     2) Ο χάρτης (.map-card) πάει από κάτω και πιάνει όλο το πλάτος.
+  */
   .contact-grid{
-    grid-template-columns: .95fr 1.05fr;
+    grid-template-columns: 1fr;
     gap: 16px;
     align-items: stretch;
   }
+
+  .contact-card{
+    display: grid;
+    grid-template-columns: .95fr 1.05fr;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .contact-cover{ grid-column: 1; }
+
+  .contact-card .contact-item:nth-of-type(-n+5){
+    grid-column: 1;
+  }
+
+  .contact-card .divider{
+    display: none;
+  }
+
+  .contact-card .contact-form{
+    grid-column: 2;
+    grid-row: 1 / -1;
+    align-self: start;
+    margin-top: 0;
+    padding-left: 18px;
+    border-left: 1px solid rgba(222,211,196,.75);
+  }
+
+  .map-card{
+    min-height: 440px;
+  }
+  .map-card iframe{
+    min-height: 440px;
+  }
+
   .help-grid{ grid-template-columns: 1fr 1fr; gap: 16px; }
 
   .space-grid{
@@ -1304,45 +1343,4 @@ svg{ display:block; }
   }
   .back-to-top{ transform: none !important; }
 }
-/* CONTACT split layout (desktop) */
-.contact-card-grid{
-  display: grid;
-  gap: 14px;
-}
-
-.contact-left{ min-width: 0; }
-.contact-right{ min-width: 0; }
-
-/* Χάρτης πιο “premium” ύψος */
-.map-card{ min-height: 320px; }
-.map-card iframe{ min-height: 320px; }
-
-@media (min-width: 860px){
-  /* 1 στήλη συνολικά: πρώτα το card, μετά ο χάρτης full width */
-  .contact-grid{
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  /* Μέσα στο contact card: 2 στήλες */
-  .contact-card-grid{
-    grid-template-columns: .92fr 1.08fr;
-    gap: 18px;
-    align-items: start;
-  }
-
-  /* “Κομψό” διαχωριστικό ανάμεσα στις στήλες */
-  .contact-right{
-    padding-left: 18px;
-    border-left: 1px solid rgba(222,211,196,.75);
-  }
-
-  /* Χάρτης κάτω και μεγάλος για να “κάθεται” ωραία */
-  .map-card{
-    min-height: 420px;
-  }
-  .map-card iframe{
-    min-height: 420px;
-  }
-}
-
+``` :contentReference[oaicite:0]{index=0}

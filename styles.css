@@ -896,6 +896,12 @@ svg{ display:block; }
   gap: 8px;
 }
 
+/* ===== CHANGE: Contact card split (desktop) + map below ===== */
+.contact-card--split{ padding: 18px; }
+
+/* mobile: φυσικά “stack” */
+.contact-split{ display:block; }
+
 /* Footer */
 .footer{
   margin-top: var(--space-6);
@@ -1227,11 +1233,41 @@ svg{ display:block; }
 
   .cards-grid{ grid-template-columns: repeat(3, 1fr); gap: 16px; }
 
+  /* CHANGE: το contact-grid γίνεται 1 στήλη, ώστε ο χάρτης να μπαίνει ΚΑΤΩ */
   .contact-grid{
-    grid-template-columns: .95fr 1.05fr;
+    grid-template-columns: 1fr;
     gap: 16px;
     align-items: stretch;
   }
+
+  /* CHANGE: split layout μέσα στο 1ο πλαίσιο */
+  .contact-card--split{
+    padding: 0; /* για να φαίνεται πιο premium, το padding το παίρνουν τα 2 columns */
+    overflow: hidden;
+  }
+  .contact-split{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+  .contact-split-left,
+  .contact-split-right{
+    padding: 18px;
+  }
+  .contact-split-left{
+    border-right: 1px solid rgba(222,211,196,.75);
+    background: rgba(255,255,255,.84);
+  }
+  .contact-split-right{
+    background:
+      radial-gradient(900px 280px at 12% 0%, rgba(230,193,177,.16), transparent 60%),
+      radial-gradient(900px 320px at 95% 90%, rgba(127,174,160,.12), transparent 60%),
+      linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.72));
+  }
+
+  /* divider δεν χρειάζεται στο desktop split */
+  .contact-split-right .divider{ display:none; }
+
   .help-grid{ grid-template-columns: 1fr 1fr; gap: 16px; }
 
   .space-grid{
@@ -1267,6 +1303,14 @@ svg{ display:block; }
   .faq-media{
     min-height: 360px;
     max-height: 520px;
+  }
+
+  /* CHANGE: χάρτης “σωστός” οπτικά κάτω από το split */
+  .map-card{
+    min-height: 420px;
+  }
+  .map-card iframe{
+    min-height: 420px;
   }
 }
 

@@ -739,7 +739,6 @@ svg{ display:block; }
 #space .space-cta .btn{ font-size: 13px; padding: 10px 14px; }
 
 /* FAQ */
-.faq-grid{ display:grid; gap: 12px; }
 .faq{
   border-radius: var(--radius-lg);
   border: 1px solid rgba(222,211,196,.95);
@@ -769,6 +768,32 @@ svg{ display:block; }
 .faq-body{
   padding: 0 16px 16px;
   border-top: 0;
+}
+
+/* CHANGE (2): νέο layout FAQ + media πλαίσιο */
+.faq-wrap{
+  display: grid;
+  gap: 14px;
+  align-items: start;
+}
+.faq-list{
+  display: grid;
+  gap: 12px; /* πάντα 1 κάτω από το άλλο */
+}
+.faq-media{
+  margin: 0;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(222,211,196,.95);
+  background: rgba(255,255,255,.70);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  min-height: 260px;
+}
+.faq-media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Contact */
@@ -852,7 +877,7 @@ svg{ display:block; }
   line-height: 1.6;
 }
 
-/* CHANGE (3): status line */
+/* status line */
 .form-status{
   margin: 2px 0 0;
   font-size: 13px;
@@ -942,7 +967,7 @@ svg{ display:block; }
   transform: translateY(0);
 }
 
-/* CHANGE (4): Floating buttons (πάνω από back-to-top) */
+/* Floating buttons */
 .floating-stack{
   position: fixed;
   right: 18px;
@@ -982,7 +1007,7 @@ svg{ display:block; }
   border-color: rgba(200,165,123,.35);
 }
 
-/* CHANGE (1): Hover / touch labels for the floating WhatsApp + Phone icons */
+/* Tooltips */
 .floating-btn[data-tooltip]{
   position: relative;
 }
@@ -1014,15 +1039,13 @@ svg{ display:block; }
   transform: translateY(-50%) translateX(0);
 }
 
-/* Make the label visible on touch devices for clarity */
-@media (hover: none){
-  .floating-btn[data-tooltip]::after{
-    opacity: 1;
-    transform: translateY(-50%) translateX(0);
-  }
+/* CHANGE (1): Στις κινητές συσκευές εμφανίζεται μόνο όταν μπει class από JS */
+.floating-btn.is-tooltip-open::after{
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
 }
 
-/* CHANGE (2): Call options modal (WhatsApp / Phone) */
+/* Call options modal */
 .contact-modal{
   position: fixed;
   inset: 0;
@@ -1187,8 +1210,6 @@ svg{ display:block; }
 
   .cards-grid{ grid-template-columns: repeat(3, 1fr); gap: 16px; }
 
-  .faq-grid{ grid-template-columns: 1fr 1fr; gap: 14px; }
-
   .contact-grid{
     grid-template-columns: .95fr 1.05fr;
     gap: 16px;
@@ -1220,6 +1241,13 @@ svg{ display:block; }
     align-items: stretch;
   }
   .about-media{ min-height: 380px; }
+
+  /* CHANGE (2): FAQ με εικόνα δίπλα στο desktop */
+  .faq-wrap{
+    grid-template-columns: 1fr .9fr;
+    align-items: stretch;
+  }
+  .faq-media{ min-height: 420px; }
 }
 
 /* Keep Services cards 2 per row on desktop (only in services section) */

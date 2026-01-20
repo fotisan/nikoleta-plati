@@ -44,40 +44,11 @@
   }
   </script>
 
-  <!-- FIX: preload the actual local font files that exist in the same folder as index.html -->
-  <link rel="preload" href="Inter-roman.var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="Inter-italic-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css?v=1" />
-
-  <!-- CHANGE: Contact layout (desktop split + map below) -->
-  <style>
-    @media (min-width: 860px){
-      #contact .contact-grid{
-        grid-template-columns: 1fr; /* map goes below */
-        gap: 16px;
-        align-items: stretch;
-      }
-
-      #contact .contact-card__split{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-        align-items: start;
-      }
-
-      #contact .contact-right .divider{
-        margin-top: 0;
-      }
-
-      #contact .map-card{
-        min-height: 380px;
-      }
-      #contact .map-card iframe{
-        min-height: 380px;
-      }
-    }
-  </style>
 </head>
 
 <body id="top">
@@ -255,6 +226,7 @@
 
         <div class="cards-grid" role="list">
 
+          <!-- CHANGE: Αυτό το πλαίσιο μπήκε ΠΡΩΤΟ -->
           <article class="card fade-in-section" role="listitem">
             <div class="icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -336,16 +308,17 @@
               <h2 class="h2">Σχετικά</h2>
 
               <p class="sub">
-                Η απόφαση να ξεκινήσει κανείς ψυχοθεραπεία δεν είναι πάντα εύκολη. Συχνά έρχεται μετά από μια περίοδο κούρασης, ερωτηματικών ή την αίσθηση ότι οι τρόποι που επιστρατεύαμε μέχρι τώρα για να διαχειριστούμε τη ζωή μας, δεν αρκούν πια.
+                Υπάρχουν στιγμές που ένα παιδί δεν μπορεί να πει με λόγια αυτό που νιώθει. Το δείχνει στη συμπεριφορά του, στο σώμα του, στο παιχνίδι του. Και τότε, ο ρόλος μας δεν είναι να το πιέσουμε να “εξηγήσει”, αλλά να του δώσουμε έναν ασφαλή τρόπο να εκφραστεί.
                 <br><br>
-                Πιστεύω βαθιά ότι η θεραπεία δεν είναι μια διαδικασία όπου κάποιος "διορθώνει" κάποιον άλλον. Είναι ένας κοινός τόπος όπου μπορείτε να ακουστείτε με πραγματικό σεβασμό, χωρίς τον φόβο της κριτικής. Είτε πρόκειται για έναν ενήλικα που αναζητά ισορροπία, είτε για ένα παιδί που εκφράζει τη δυσκολία του μέσα από τη συμπεριφορά και το παιχνίδι, ο στόχος παραμένει ο ίδιος: να δημιουργήσουμε την ασφάλεια που χρειάζεται για να επέλθει η αλλαγή.
+                Αυτό είναι και το “γιατί” μου. Επέλεξα να δουλεύω με παιδιά και οικογένειες γιατί πιστεύω ότι η αλλαγή γίνεται πιο ουσιαστική όταν το παιδί νιώσει πρώτα ασφάλεια. Μέσα από την Παιγνιοθεραπεία, και με την δομή της ABA όταν χρειάζεται, δημιουργούμε ένα πλαίσιο που βοηθά το παιδί να χτίσει δεξιότητες, να μειώσει την ένταση, να επικοινωνήσει καλύτερα και να προχωρήσει με τον δικό του ρυθμό.
                 <br><br>
-                Στη συνεργασία μας, δίνουμε χρόνο και χώρο σε αυτά που σας απασχολούν, δουλεύοντας πρακτικά και ουσιαστικά. Μαζί θα αναζητήσουμε τα εργαλεία και τις απαντήσεις που θα σας βοηθήσουν να προχωρήσετε με τον δικό σας ρυθμό, προς μια καθημερινότητα με λιγότερη ένταση και περισσότερη κατανόηση.
+                Για τους γονείς, ο στόχος δεν είναι να “κάνετε τα πάντα τέλεια”. Είναι να έχετε καθοδήγηση, ξεκάθαρα βήματα και μια σταθερή συνεργασία, ώστε το σπίτι να γίνει πιο ήρεμο και προβλέψιμο. Εδώ, θα ακουστείτε με σεβασμό και θα δουλέψουμε μαζί, πρακτικά, χωρίς κριτική.
               </p>
             </div>
           </div>
 
           <figure class="about-media">
+            <!-- CHANGE: .jpg -> .png -->
             <img src="about-portrait.png" alt="Η Νικολέτα Πλατή στον χώρο συνεδριών" loading="lazy">
           </figure>
         </div>
@@ -497,6 +470,7 @@
           </div>
 
           <figure class="faq-media" aria-label="Εικόνα ενότητας FAQ">
+            <!-- CHANGE: .jpg -> .png -->
             <img src="faq-image.png" alt="Ήρεμη λεπτομέρεια του χώρου συνεδριών" loading="lazy">
           </figure>
         </div>
@@ -514,103 +488,95 @@
 
         <div class="contact-grid">
           <div class="contact-card">
-            <!-- CHANGE: split into left (until socials) + right (the rest) on desktop -->
-            <div class="contact-card__split">
-              <div class="contact-left">
-                <div class="contact-cover">
-                  <img src="Image-contact.png" alt="Χώρος" loading="lazy">
-                </div>
+            <div class="contact-cover">
+              <img src="Image-contact.png" alt="Χώρος" loading="lazy">
+            </div>
 
-                <div class="contact-item">
-                  <span class="contact-label">Διεύθυνση</span>
-                  <span class="contact-value">Στεφάνου Καζούλη 18, Ρόδος, Ελλάδα</span>
-                </div>
+            <div class="contact-item">
+              <span class="contact-label">Διεύθυνση</span>
+              <span class="contact-value">Στεφάνου Καζούλη 18, Ρόδος, Ελλάδα</span>
+            </div>
 
-                <div class="contact-item">
-                  <span class="contact-label">Κινητό</span>
-                  <a class="link contact-value" href="tel:+306949626413">694 962 6413</a>
-                </div>
+            <div class="contact-item">
+              <span class="contact-label">Κινητό</span>
+              <a class="link contact-value" href="tel:+306949626413">694 962 6413</a>
+            </div>
 
-                <div class="contact-item">
-                  <span class="contact-label">Email</span>
-                  <a class="link contact-value" href="mailto:nicoletaplath@gmail.com">nicoletaplath@gmail.com</a>
-                </div>
+            <div class="contact-item">
+              <span class="contact-label">Email</span>
+              <a class="link contact-value" href="mailto:nicoletaplath@gmail.com">nicoletaplath@gmail.com</a>
+            </div>
 
-                <div class="contact-item">
-                  <span class="contact-label">Περιοχή εξυπηρέτησης</span>
-                  <span class="contact-value">Ρόδος</span>
-                </div>
+            <div class="contact-item">
+              <span class="contact-label">Περιοχή εξυπηρέτησης</span>
+              <span class="contact-value">Ρόδος</span>
+            </div>
 
-                <div class="contact-item">
-                  <span class="contact-label">Social</span>
-                  <div class="contact-social">
-                    <a class="btn btn--outline btn--sm" href="https://www.instagram.com/nikoletaplati_psychologist/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
-                    <a class="btn btn--outline btn--sm" href="https://www.facebook.com/Kentrologoumathisiskaisimperiforas/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
-                    <a class="btn btn--outline btn--sm" href="https://www.tiktok.com/@nikoleta.plati" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="contact-right">
-                <div class="divider"></div>
-
-                <form
-                  class="contact-form"
-                  id="contactForm"
-                  action="https://formspree.io/f/your-form-id"
-                  method="POST"
-                >
-                  <div class="field">
-                    <label class="field-label" for="name">Ονοματεπώνυμο</label>
-                    <input class="input" id="name" name="name" autocomplete="name" required>
-                  </div>
-
-                  <div class="field">
-                    <label class="field-label" for="phone">Τηλέφωνο</label>
-                    <input
-                      class="input"
-                      id="phone"
-                      name="phone"
-                      autocomplete="tel"
-                      inputmode="tel"
-                      required
-                      pattern="^[0-9+\\s().-]{8,}$"
-                      title="Παρακαλώ γράψτε ένα έγκυρο τηλέφωνο (τουλάχιστον 8 χαρακτήρες)."
-                    >
-                  </div>
-
-                  <div class="field">
-                    <label class="field-label" for="service">Υπηρεσία</label>
-                    <input class="input" id="service" name="service" list="servicesList" placeholder="π.χ. Ατομικές Συνεδρίες Ενηλίκων" required>
-                    <datalist id="servicesList">
-                      <option value="Ατομικές Συνεδρίες Ενηλίκων"></option>
-                      <option value="Συμβουλευτική Γονέων"></option>
-                      <option value="Θεραπεία Συμπεριφοράς (ΑΒΑ)"></option>
-                      <option value="Παιγνιοθεραπεία"></option>
-                    </datalist>
-                  </div>
-
-                  <div class="field">
-                    <label class="field-label" for="msg">Μήνυμα</label>
-                    <textarea class="textarea" id="msg" name="message" required></textarea>
-                  </div>
-
-                  <div class="form-actions">
-                    <button class="btn btn--primary" type="submit">Αποστολή</button>
-                    <a class="btn btn--outline js-call-cta" href="tel:+306949626413">Κλήση</a>
-                  </div>
-
-                  <p class="form-note">
-                    Στο μήνυμα γράψτε και την υπηρεσία που θέλετε και ό,τι θεωρείτε χρήσιμο για να οργανωθεί το ραντεβού.
-                  </p>
-
-                  <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-                </form>
+            <div class="contact-item">
+              <span class="contact-label">Social</span>
+              <div class="contact-social">
+                <a class="btn btn--outline btn--sm" href="https://www.instagram.com/nikoletaplati_psychologist/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+                <a class="btn btn--outline btn--sm" href="https://www.facebook.com/Kentrologoumathisiskaisimperiforas/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+                <a class="btn btn--outline btn--sm" href="https://www.tiktok.com/@nikoleta.plati" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
               </div>
             </div>
+
+            <div class="divider"></div>
+
+            <form
+              class="contact-form"
+              id="contactForm"
+              action="https://formspree.io/f/your-form-id"
+              method="POST"
+            >
+              <div class="field">
+                <label class="field-label" for="name">Ονοματεπώνυμο</label>
+                <input class="input" id="name" name="name" autocomplete="name" required>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="phone">Τηλέφωνο</label>
+                <input
+                  class="input"
+                  id="phone"
+                  name="phone"
+                  autocomplete="tel"
+                  inputmode="tel"
+                  required
+                  pattern="^[0-9+\\s().-]{8,}$"
+                  title="Παρακαλώ γράψτε ένα έγκυρο τηλέφωνο (τουλάχιστον 8 χαρακτήρες)."
+                >
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="service">Υπηρεσία</label>
+                <input class="input" id="service" name="service" list="servicesList" placeholder="π.χ. Ατομικές Συνεδρίες Ενηλίκων" required>
+                <datalist id="servicesList">
+                  <option value="Ατομικές Συνεδρίες Ενηλίκων"></option>
+                  <option value="Συμβουλευτική Γονέων"></option>
+                  <option value="Θεραπεία Συμπεριφοράς (ΑΒΑ)"></option>
+                  <option value="Παιγνιοθεραπεία"></option>
+                </datalist>
+              </div>
+
+              <div class="field">
+                <label class="field-label" for="msg">Μήνυμα</label>
+                <textarea class="textarea" id="msg" name="message" required></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button class="btn btn--primary" type="submit">Αποστολή</button>
+                <a class="btn btn--outline js-call-cta" href="tel:+306949626413">Κλήση</a>
+              </div>
+
+              <p class="form-note">
+                Στο μήνυμα γράψτε και την υπηρεσία που θέλετε και ό,τι θεωρείτε χρήσιμο για να οργανωθεί το ραντεβού.
+              </p>
+
+              <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            </form>
           </div>
 
-          <!-- CHANGE: map remains second, but CSS override places it below on desktop -->
           <div class="map-card" aria-label="Χάρτης">
             <iframe
               title="Χάρτης"
@@ -656,6 +622,7 @@
 
   <!-- Floating buttons -->
   <div class="floating-stack" aria-label="Γρήγορη επικοινωνία">
+    <!-- CHANGE (1): Viber πρώτο -->
     <a class="floating-btn floating-btn--viber" href="viber://chat?number=%2B306949626413" aria-label="Viber" data-tooltip="Viber">
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M6.5 6.8C7.9 5.3 9.9 4.5 12 4.5c4.1 0 7.5 3 7.5 6.9c0 1.9-.8 3.6-2.1 4.9c-1.6 1.6-3.7 2.5-5.9 2.5c-.9 0-1.8-.1-2.6-.4L5 20l1.2-3.3c-.7-1.1-1.1-2.4-1.1-3.7c0-1.6.5-3.1 1.4-4.2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
@@ -688,6 +655,7 @@
       <p class="contact-modal__desc" id="contactModalDesc">Επιλέξτε τρόπο επικοινωνίας.</p>
 
       <div class="contact-modal__actions" role="list">
+        <!-- CHANGE (1): Viber πρώτο και στο modal -->
         <a class="contact-choice contact-choice--viber" role="listitem" href="viber://chat?number=%2B306949626413" aria-label="Viber">
           <span class="contact-choice__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
@@ -832,6 +800,9 @@
       });
     })();
 
+    /* CHANGE (2): Σε touch συσκευές, 1ο tap σε ΟΠΟΙΟΔΗΠΟΤΕ εικονίδιο ανοίγει τα labels σε ΟΛΑ τα εικονίδια μαζί.
+       2ο tap εκτελεί την ενέργεια (Viber / WhatsApp / Modal κλήσης).
+    */
     (function(){
       const isTouch = window.matchMedia("(hover: none)").matches;
       if(!isTouch) return;
@@ -863,6 +834,7 @@
             return;
           }
 
+          // 2ο tap: κλείνουμε labels και αφήνουμε το click να προχωρήσει
           closeAll();
           clearTimeout(timer);
         }, true);

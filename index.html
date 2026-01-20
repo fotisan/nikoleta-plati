@@ -228,7 +228,6 @@
 
           <article class="card fade-in-section" role="listitem">
             <div class="icon" aria-hidden="true">
-              <!-- CHANGE (3): πιο σχετικό icon για Συμβουλευτική Γονέων -->
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M7.5 11.2a3.1 3.1 0 1 1 0-6.2a3.1 3.1 0 0 1 0 6.2z" stroke="currentColor" stroke-width="2"/>
                 <path d="M16.8 12.2a2.7 2.7 0 1 1 0-5.4a2.7 2.7 0 0 1 0 5.4z" stroke="currentColor" stroke-width="2" opacity=".95"/>
@@ -243,7 +242,6 @@
 
           <article class="card fade-in-section" role="listitem">
             <div class="icon" aria-hidden="true">
-              <!-- CHANGE (3): πιο σχετικό icon για ABA (puzzle/δομή/βήματα) -->
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M8 4h4a2 2 0 0 1 2 2v1h1a2 2 0 0 1 2 2v3h-1a2 2 0 0 0-2 2v1h-3a2 2 0 0 1-2-2v-1H8a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1V6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
                 <path d="M6.5 17.5h5a2 2 0 0 0 2-2v-1.2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -257,7 +255,6 @@
 
           <article class="card fade-in-section" role="listitem">
             <div class="icon" aria-hidden="true">
-              <!-- CHANGE (3): πιο σχετικό icon για Παιγνιοθεραπεία (balloon/παιχνίδι) -->
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M12 3c3.3 0 6 2.7 6 6c0 3.8-2.8 7.2-6 7.2S6 12.8 6 9c0-3.3 2.7-6 6-6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
                 <path d="M10.5 16.2c.3 1.3 1 2 1.5 2s1.2-.7 1.5-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -272,7 +269,6 @@
 
           <article class="card fade-in-section" role="listitem">
             <div class="icon" aria-hidden="true">
-              <!-- CHANGE (3): πιο σχετικό icon για Ατομικές Συνεδρίες (dialog/στήριξη) -->
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M6.5 14.5c-1.9-1.4-3-3.1-3-5c0-3.6 3.8-6.5 8.5-6.5s8.5 2.9 8.5 6.5S16.7 16 12 16c-.9 0-1.7-.1-2.5-.3L6 17l.5-2.5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
                 <path d="M8.5 9.5h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -448,7 +444,6 @@
           <p class="sub">Γρήγορες απαντήσεις για τα βασικά.</p>
         </div>
 
-        <!-- CHANGE (2): 1 στήλη FAQ πάντα + εικόνα δίπλα στο desktop / κάτω στο mobile -->
         <div class="faq-wrap">
           <div class="faq-list" aria-label="Λίστα συχνών ερωτήσεων">
             <details class="faq">
@@ -580,7 +575,6 @@
           </div>
 
           <div class="map-card" aria-label="Χάρτης">
-            <!-- CHANGE (4): Σωστό embed με query στη σωστή διεύθυνση -->
             <iframe
               title="Χάρτης"
               loading="lazy"
@@ -625,6 +619,14 @@
 
   <!-- Floating buttons -->
   <div class="floating-stack" aria-label="Γρήγορη επικοινωνία">
+    <!-- CHANGE (1): Viber πρώτο -->
+    <a class="floating-btn floating-btn--viber" href="viber://chat?number=%2B306949626413" aria-label="Viber" data-tooltip="Viber">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6.5 6.8C7.9 5.3 9.9 4.5 12 4.5c4.1 0 7.5 3 7.5 6.9c0 1.9-.8 3.6-2.1 4.9c-1.6 1.6-3.7 2.5-5.9 2.5c-.9 0-1.8-.1-2.6-.4L5 20l1.2-3.3c-.7-1.1-1.1-2.4-1.1-3.7c0-1.6.5-3.1 1.4-4.2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M9.3 9.2c.2-.4.4-.5.7-.5h.5c.2 0 .5.1.7.5l.5 1.2c.1.3.1.5 0 .7l-.3.5c-.1.2-.2.4 0 .7c.2.4.6 1.1 1.3 1.7c.7.6 1.4 1 1.8 1.1c.3.1.5 0 .7-.2l.5-.6c.2-.2.4-.3.7-.2l1.3.5c.4.1.5.4.5.6v.6c0 .3-.2.7-.6.9c-.4.2-.9.4-1.8.4c-1.1 0-2.3-.4-3.7-1.4c-1.8-1.4-2.9-3.2-3.2-3.8c-.3-.6-.3-1.2-.2-1.6c.1-.4.4-.9.6-1.1z" fill="currentColor" opacity=".92"/>
+      </svg>
+    </a>
+
     <a class="floating-btn floating-btn--whatsapp" href="https://wa.me/306949626413" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" data-tooltip="WhatsApp">
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M20 11.7c0 4.5-3.8 8.1-8.4 8.1-1.4 0-2.8-.3-4-.9L4 20l1.2-3.3c-.7-1.1-1.1-2.4-1.1-3.7C4.1 8.5 7.9 4.9 12.5 4.9S20 7.2 20 11.7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
@@ -650,6 +652,20 @@
       <p class="contact-modal__desc" id="contactModalDesc">Επιλέξτε τρόπο επικοινωνίας.</p>
 
       <div class="contact-modal__actions" role="list">
+        <!-- CHANGE (1): Viber πρώτο και στο modal -->
+        <a class="contact-choice contact-choice--viber" role="listitem" href="viber://chat?number=%2B306949626413" aria-label="Viber">
+          <span class="contact-choice__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M6.5 6.8C7.9 5.3 9.9 4.5 12 4.5c4.1 0 7.5 3 7.5 6.9c0 1.9-.8 3.6-2.1 4.9c-1.6 1.6-3.7 2.5-5.9 2.5c-.9 0-1.8-.1-2.6-.4L5 20l1.2-3.3c-.7-1.1-1.1-2.4-1.1-3.7c0-1.6.5-3.1 1.4-4.2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M9.3 9.2c.2-.4.4-.5.7-.5h.5c.2 0 .5.1.7.5l.5 1.2c.1.3.1.5 0 .7l-.3.5c-.1.2-.2.4 0 .7c.2.4.6 1.1 1.3 1.7c.7.6 1.4 1 1.8 1.1c.3.1.5 0 .7-.2l.5-.6c.2-.2.4-.3.7-.2l1.3.5c.4.1.5.4.5.6v.6c0 .3-.2.7-.6.9c-.4.2-.9.4-1.8.4c-1.1 0-2.3-.4-3.7-1.4c-1.8-1.4-2.9-3.2-3.2-3.8c-.3-.6-.3-1.2-.2-1.6c.1-.4.4-.9.6-1.1z" fill="currentColor" opacity=".92"/>
+            </svg>
+          </span>
+          <span class="contact-choice__text">
+            <span class="contact-choice__label">Viber</span>
+            <span class="contact-choice__meta">Στείλτε μήνυμα</span>
+          </span>
+        </a>
+
         <a class="contact-choice contact-choice--whatsapp" role="listitem" href="https://wa.me/306949626413" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
           <span class="contact-choice__icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
@@ -781,16 +797,15 @@
       });
     })();
 
-    /* CHANGE (1): Στις κινητές συσκευές τα labels WhatsApp/Τηλέφωνο εμφανίζονται ΜΟΝΟ με tap.
-       1ο tap: δείχνει label
-       2ο tap: εκτελεί την ενέργεια (WhatsApp / Modal κλήσης)
+    /* CHANGE (2): Σε touch συσκευές, 1ο tap σε ΟΠΟΙΟΔΗΠΟΤΕ εικονίδιο ανοίγει τα labels σε ΟΛΑ τα εικονίδια μαζί.
+       2ο tap εκτελεί την ενέργεια (Viber / WhatsApp / Modal κλήσης).
     */
     (function(){
       const isTouch = window.matchMedia("(hover: none)").matches;
       if(!isTouch) return;
 
       const stack = document.querySelector('.floating-stack');
-      const buttons = document.querySelectorAll('.floating-btn[data-tooltip]');
+      const buttons = Array.from(document.querySelectorAll('.floating-btn[data-tooltip]'));
       if(!buttons.length) return;
 
       let timer = null;
@@ -798,24 +813,28 @@
       function closeAll(){
         buttons.forEach(b => b.classList.remove('is-tooltip-open'));
       }
+      function openAll(){
+        buttons.forEach(b => b.classList.add('is-tooltip-open'));
+      }
+      function anyOpen(){
+        return buttons.some(b => b.classList.contains('is-tooltip-open'));
+      }
 
       buttons.forEach(btn => {
         btn.addEventListener('click', (e) => {
-          const open = btn.classList.contains('is-tooltip-open');
-
-          if(!open){
+          if(!anyOpen()){
             e.preventDefault();
             e.stopPropagation();
-            closeAll();
-            btn.classList.add('is-tooltip-open');
+            openAll();
             clearTimeout(timer);
-            timer = setTimeout(() => btn.classList.remove('is-tooltip-open'), 2400);
+            timer = setTimeout(closeAll, 2400);
             return;
           }
 
-          // 2ο tap: αφήνουμε να συνεχίσει (WhatsApp ανοίγει, τηλέφωνο ανοίγει modal)
-          btn.classList.remove('is-tooltip-open');
-        }, true); // capture ώστε να τρέχει πριν τα άλλα click handlers (π.χ. modal)
+          // 2ο tap: κλείνουμε labels και αφήνουμε το click να προχωρήσει
+          closeAll();
+          clearTimeout(timer);
+        }, true);
       });
 
       document.addEventListener('click', (e) => {

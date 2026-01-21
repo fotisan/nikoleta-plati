@@ -32,7 +32,8 @@
 }
 
 /* Desktop nav items: styled “pills”, even if links look plain */
-.site-header .nav > a{
+/* CHANGE: να ΜΗΝ επηρεάζεται το "Επικοινωνία" (btn--primary) από το generic nav pill style */
+.site-header .nav > a:not(.btn--primary){
   text-decoration: none;
   font-size: 13px;
   font-weight: 780;
@@ -50,7 +51,7 @@
   transition: transform .18s ease, box-shadow .25s ease, background .2s ease, border-color .2s ease, color .2s ease;
 }
 
-.site-header .nav > a:hover{
+.site-header .nav > a:not(.btn--primary):hover{
   transform: translateY(-2px);
   background: rgba(255,255,255,.92);
   border-color: rgba(200,165,123,.55);
@@ -59,11 +60,11 @@
     inset 0 1px 0 rgba(255,255,255,.70);
 }
 
-.site-header .nav > a:active{
+.site-header .nav > a:not(.btn--primary):active{
   transform: translateY(1px);
 }
 
-.site-header .nav > a:focus-visible{
+.site-header .nav > a:not(.btn--primary):focus-visible{
   outline: none;
   border-color: rgba(200,165,123,.70);
   box-shadow:
@@ -74,6 +75,58 @@
 /* Prevent default underline if anything slips through */
 .site-header .nav a{
   text-decoration: none;
+}
+
+/* CHANGE: Social links styling (Nav + Mobile + Footer) */
+.social,
+.mobile-social{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+}
+
+.social-link{
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  display:grid;
+  place-items:center;
+
+  border: 1px solid rgba(222,211,196,.95);
+  background: rgba(255,255,255,.62);
+  box-shadow:
+    0 10px 22px rgba(31,29,26,.06),
+    inset 0 1px 0 rgba(255,255,255,.60);
+
+  color: rgba(31,29,26,.78);
+  transition: transform .18s ease, box-shadow .25s ease, background .2s ease, border-color .2s ease, color .2s ease;
+}
+
+.social-link svg{
+  width: 18px;
+  height: 18px;
+}
+
+.social-link:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.92);
+  border-color: rgba(200,165,123,.55);
+  color: rgba(31,29,26,.92);
+  box-shadow:
+    0 14px 30px rgba(31,29,26,.10),
+    inset 0 1px 0 rgba(255,255,255,.70);
+}
+
+.social-link:active{
+  transform: translateY(1px);
+}
+
+.social-link:focus-visible{
+  outline: none;
+  border-color: rgba(200,165,123,.70);
+  box-shadow:
+    0 0 0 6px rgba(200,165,123,.16),
+    0 14px 30px rgba(31,29,26,.10);
 }
 
 /* Cards */

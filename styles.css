@@ -21,6 +21,61 @@
   font-display: swap;
 }
 
+/* =========================
+   NAV UPGRADE (more design)
+   ========================= */
+
+/* Small button size (used in nav + other places) */
+.btn--sm{
+  font-size: 13px;
+  padding: 10px 14px;
+}
+
+/* Desktop nav items: styled “pills”, even if links look plain */
+.site-header .nav > a{
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 780;
+  letter-spacing: .1px;
+  padding: 10px 14px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(222,211,196,.95);
+  background: rgba(255,255,255,.62);
+  box-shadow:
+    0 10px 22px rgba(31,29,26,.06),
+    inset 0 1px 0 rgba(255,255,255,.60);
+
+  color: rgba(31,29,26,.90);
+  transition: transform .18s ease, box-shadow .25s ease, background .2s ease, border-color .2s ease, color .2s ease;
+}
+
+.site-header .nav > a:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.92);
+  border-color: rgba(200,165,123,.55);
+  box-shadow:
+    0 14px 30px rgba(31,29,26,.10),
+    inset 0 1px 0 rgba(255,255,255,.70);
+}
+
+.site-header .nav > a:active{
+  transform: translateY(1px);
+}
+
+.site-header .nav > a:focus-visible{
+  outline: none;
+  border-color: rgba(200,165,123,.70);
+  box-shadow:
+    0 0 0 6px rgba(200,165,123,.16),
+    0 14px 30px rgba(31,29,26,.10);
+}
+
+/* Prevent default underline if anything slips through */
+.site-header .nav a{
+  text-decoration: none;
+}
+
 /* Cards */
 .cards-grid{ display:grid; gap: 14px; }
 

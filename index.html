@@ -44,12 +44,27 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- LOCAL FONTS (no Google Fonts) -->
+  <link rel="preload" href="Inter-roman.var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="Inter-italic-var.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- CRITICAL CSS (above-the-fold: header + hero) -->
   <style>
+    @font-face{
+      font-family: "Inter";
+      src: url("Inter-roman.var.woff2") format("woff2");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face{
+      font-family: "Inter";
+      src: url("Inter-italic-var.woff2") format("woff2");
+      font-weight: 100 900;
+      font-style: italic;
+      font-display: swap;
+    }
+
     :root{
       --bg: #f6f1ea;
       --bg-2:#f1ebe3;

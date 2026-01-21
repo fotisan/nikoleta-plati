@@ -3,6 +3,24 @@
    μεταφέρθηκε inline στο <head> του HTML.
 */
 
+/* =========================
+   LOCAL FONTS (NO GOOGLE)
+   ========================= */
+@font-face{
+  font-family: "Inter";
+  src: url("Inter-roman.var.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face{
+  font-family: "Inter";
+  src: url("Inter-italic-var.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* Cards */
 .cards-grid{ display:grid; gap: 14px; }
 

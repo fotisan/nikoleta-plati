@@ -79,11 +79,9 @@
 }
 .section-head p{
   margin: 0;
-  color: rgba(31,29,26,.72);
-  line-height: 1.7;
+  color: rgba(31,29,26,.76);
+  line-height: 1.75;
 }
-
-.section{ padding: clamp(44px, 7vw, 92px) 0; }
 
 /* =========================
    REVEAL SAFEGUARDS
@@ -140,8 +138,8 @@ html.js .fade-in-section.is-visible{
 }
 .card p{
   margin: 0 0 12px;
-  color: rgba(31,29,26,.74);
-  line-height: 1.7;
+  color: rgba(31,29,26,.76);
+  line-height: 1.75;
 }
 .card:hover{
   transform: translateY(-2px);
@@ -185,13 +183,28 @@ html.js .fade-in-section.is-visible{
 }
 .services-callout__copy p{
   margin: 0;
-  color: rgba(31,29,26,.74);
-  line-height: 1.7;
+  color: rgba(31,29,26,.76);
+  line-height: 1.75;
 }
 .services-callout__actions{
   display:flex;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+/* Directional cue */
+.directional-cue{
+  margin: 14px 0 0;
+  color: rgba(31,29,26,.76);
+  line-height: 1.75;
+}
+.directional-cue a{
+  font-weight: 800;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(31,29,26,.20);
+}
+.directional-cue a:hover{
+  border-bottom-color: rgba(31,29,26,.36);
 }
 
 /* =========================
@@ -203,14 +216,14 @@ html.js .fade-in-section.is-visible{
 }
 .prose p{
   margin: 0 0 12px;
-  color: rgba(31,29,26,.74);
-  line-height: 1.7;
+  color: rgba(31,29,26,.76);
+  line-height: 1.8;
 }
 .bullets{
   margin: 14px 0 0;
   padding-left: 18px;
-  color: rgba(31,29,26,.78);
-  line-height: 1.7;
+  color: rgba(31,29,26,.80);
+  line-height: 1.75;
 }
 .about-copy .section-head{
   margin-bottom: 0;
@@ -277,14 +290,14 @@ html.js .fade-in-section.is-visible{
 }
 .space-notes p{
   margin: 0 0 12px;
-  color: rgba(31,29,26,.74);
-  line-height: 1.7;
+  color: rgba(31,29,26,.76);
+  line-height: 1.75;
 }
 .checks{
   margin: 0;
   padding-left: 18px;
-  color: rgba(31,29,26,.78);
-  line-height: 1.7;
+  color: rgba(31,29,26,.80);
+  line-height: 1.75;
 }
 
 /* =========================
@@ -336,8 +349,8 @@ details[open] summary:after{ content:"–"; }
 
 .faq-body{
   padding: 0 16px 16px;
-  color: rgba(31,29,26,.74);
-  line-height: 1.7;
+  color: rgba(31,29,26,.76);
+  line-height: 1.75;
 }
 
 .faq-media{
@@ -400,9 +413,9 @@ details[open] summary:after{ content:"–"; }
   opacity: .9;
 }
 .link{
-  color: rgba(31,29,26,.90);
+  color: rgba(31,29,26,.92);
   text-decoration: none;
-  font-weight: 750;
+  font-weight: 800;
   letter-spacing: 0;
 }
 .link:hover{ text-decoration: underline; }
@@ -473,7 +486,7 @@ details[open] summary:after{ content:"–"; }
   top: 14px;
   font-size: 13px;
   font-weight: 650;
-  color: rgba(31,29,26,.70);
+  color: rgba(31,29,26,.74);
   pointer-events: none;
   transform-origin: left top;
   transition: transform .16s ease, opacity .16s ease, color .16s ease;
@@ -484,8 +497,8 @@ details[open] summary:after{ content:"–"; }
 .float-input:focus + .float-label,
 .float-input:not(:placeholder-shown) + .float-label{
   transform: translateY(-8px) scale(.92);
-  color: rgba(31,29,26,.78);
-  opacity: .9;
+  color: rgba(31,29,26,.80);
+  opacity: .92;
 }
 
 .float-input:focus{
@@ -512,14 +525,14 @@ details[open] summary:after{ content:"–"; }
 
 .form-note{
   margin: 12px 0 0;
-  color: rgba(31,29,26,.66);
-  font-size: 13px;
-  line-height: 1.7;
+  color: rgba(31,29,26,.76);
+  font-size: 14px;
+  line-height: 1.75;
 }
 .form-status{
   margin: 10px 0 0;
-  font-size: 13px;
-  color: rgba(31,29,26,.74);
+  font-size: 14px;
+  color: rgba(31,29,26,.78);
   min-height: 18px;
 }
 
@@ -538,10 +551,10 @@ details[open] summary:after{ content:"–"; }
 }
 .footer p{
   margin: 0;
-  color: rgba(31,29,26,.78);
+  color: rgba(31,29,26,.80);
 }
 .footer .muted{
-  color: rgba(31,29,26,.62);
+  color: rgba(31,29,26,.74);
 }
 
 /* =========================

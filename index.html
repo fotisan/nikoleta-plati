@@ -8,7 +8,6 @@
   <title>Ψυχολόγος στη Ρόδο | Νικολέτα Πλατή</title>
   <meta name="description" content="Ψυχολόγος στη Ρόδο. Συνεδρίες για ενήλικες, παιδιά και εφήβους. Ραντεβού και επικοινωνία εύκολα, με σεβασμό και διακριτικότητα." />
 
-  <!-- No-JS safeguard: αν δεν φορτώσει JS, δεν θέλουμε hidden sections -->
   <script>
     document.documentElement.classList.add('js');
   </script>
@@ -25,7 +24,7 @@
       --bg-2: #EFE7DD;
 
       --ink: rgba(31,29,26,.92);
-      --muted: rgba(31,29,26,.75); /* ↑ contrast boost (WCAG-friendly on warm bg) */
+      --muted: rgba(31,29,26,.75);
 
       --sage: #7FAEA0;
       --terra: #E6C1B1;
@@ -51,6 +50,7 @@
       --container: 1120px;
 
       --mobileBarH: 68px;
+      --headerOffset: 84px;
     }
 
     body:before{
@@ -67,7 +67,10 @@
 
     *{ box-sizing: border-box; }
     html, body{ height: 100%; }
-    html{ scroll-behavior: smooth; }
+    html{
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--headerOffset);
+    }
     body{
       margin: 0;
       font-family: var(--font-sans);
@@ -75,7 +78,7 @@
       line-height: 1.7;
       background: transparent;
       text-rendering: optimizeLegibility;
-      font-size: 18px; /* ↑ readability for older users */
+      font-size: 18px;
     }
 
     a{ color: inherit; }
@@ -115,6 +118,7 @@
       letter-spacing: 0;
       transition: transform .18s ease, box-shadow .25s ease, background .2s ease, border-color .2s ease;
       will-change: transform;
+      cursor: pointer;
     }
     .btn:hover{ transform: translateY(-2px); box-shadow: 0 14px 34px rgba(31,29,26,.12); }
     .btn:active{ transform: translateY(-1px); }
@@ -293,7 +297,7 @@
     .section{ padding: clamp(44px, 7vw, 92px) 0; }
     .hero{ padding-top: clamp(44px, 6.5vw, 88px); }
 
-    /* Kicker / editorial label (only place we use uppercase + tracking) */
+    /* Kicker / editorial label */
     .kicker{
       display:inline-flex;
       align-items:center;
@@ -325,7 +329,6 @@
     }
     .hero-copy{ max-width: 46rem; }
 
-    /* Trust cue: name carries visual weight in hero */
     .hero-name{
       margin: 0 0 10px;
       font-weight: 850;
@@ -397,7 +400,9 @@
       position: relative;
     }
 
-    /* PHOTO: no overlay. Organic blob border-radius instead of bottom gradient. */
+    /* PHOTO: organic blob shape, no overlay.
+       Gaze trick: by default we flip the image so faces tend to "look in".
+       If your real photo already looks toward the text, remove class "hero-photo--look-in". */
     .hero-photo{
       overflow:hidden;
       border: 1px solid rgba(222,211,196,.95);
@@ -411,6 +416,9 @@
       height: 100%;
       object-fit: cover;
       display:block;
+    }
+    .hero-photo--look-in img{
+      transform: scaleX(-1);
     }
 
     .hero-info{
@@ -473,7 +481,7 @@
       main{ padding-bottom: 0; }
     }
 
-    /* Floating stack: on mobile show text on buttons, no tooltips */
+    /* Floating actions (direct tap) */
     .floating-stack{
       position: fixed;
       right: 12px;
@@ -508,7 +516,6 @@
       white-space: nowrap;
     }
 
-    /* Desktop: compact circles, hide text */
     @media (min-width: 860px){
       .floating-btn{
         width: 54px;
@@ -542,6 +549,89 @@
       opacity: 1;
       transform: translateY(0);
       pointer-events: auto;
+    }
+
+    /* Sticky-only modal (mobile appointment) */
+    .sheet{
+      position: fixed;
+      inset: 0;
+      z-index: 99;
+      display: none;
+      background: rgba(16,15,14,.34);
+      backdrop-filter: blur(10px);
+    }
+    .sheet.is-open{ display:block; }
+    .sheet__panel{
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      border-radius: 26px;
+      border: 1px solid rgba(222,211,196,.95);
+      background:
+        radial-gradient(900px 260px at 10% 0%, rgba(230,193,177,.18), transparent 60%),
+        radial-gradient(900px 320px at 95% 90%, rgba(127,174,160,.14), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.80));
+      box-shadow: 0 26px 70px rgba(16,15,14,.28);
+      padding: 14px;
+    }
+    .sheet__top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(222,211,196,.75);
+    }
+    .sheet__title{
+      margin: 0;
+      font-size: 15px;
+      font-weight: 850;
+      letter-spacing: -0.2px;
+      line-height: 1.2;
+    }
+    .sheet__sub{
+      margin: 4px 0 0;
+      color: rgba(31,29,26,.76);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .sheet__close{
+      width: 42px; height: 42px;
+      border-radius: 999px;
+      border: 1px solid rgba(222,211,196,.95);
+      background: rgba(255,255,255,.78);
+      box-shadow: 0 10px 22px rgba(31,29,26,.10);
+      cursor:pointer;
+      font-size: 22px;
+      line-height: 1;
+      display:grid;
+      place-items:center;
+      flex: 0 0 auto;
+    }
+    .sheet__actions{
+      display:grid;
+      gap: 10px;
+      padding-top: 12px;
+    }
+    .sheet__actions a{
+      text-decoration:none;
+      padding: 14px 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(222,211,196,.90);
+      background: rgba(255,255,255,.82);
+      box-shadow: 0 12px 26px rgba(31,29,26,.08);
+      font-weight: 750;
+      letter-spacing: 0;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap: 12px;
+    }
+    .sheet__actions a strong{ font-weight: 850; }
+    .sheet__actions a span{ color: rgba(31,29,26,.74); font-size: 13px; }
+    @media (min-width: 860px){
+      .sheet{ display:none !important; }
     }
   </style>
 
@@ -603,7 +693,6 @@
         <div class="hero-copy">
           <span class="kicker"><i></i> Ψυχολόγος στη Ρόδο</span>
 
-          <!-- Trust gap fix: name is now part of the hero visual weight -->
           <p class="hero-name">Νικολέτα Πλατή <span>Ψυχολόγος</span></p>
 
           <h1>Χώρος για σκέψη, καθαρότητα και αλλαγή.</h1>
@@ -640,7 +729,7 @@
         </div>
 
         <aside class="hero-card" aria-label="Εικόνα και βασικές πληροφορίες">
-          <figure class="hero-photo">
+          <figure class="hero-photo hero-photo--look-in">
             <!-- LCP safeguard: no lazy, fetchpriority high -->
             <img
               src="Hero-section.webp"
@@ -668,7 +757,7 @@
           <p>Καθαρά βήματα, με στόχο να νιώσετε καλύτερα στη ζωή σας, στις σχέσεις και στην καθημερινότητα.</p>
         </div>
 
-        <div class="cards-grid">
+        <div class="cards-grid cards-grid--mobile-carousel" aria-label="Κάρτες υπηρεσιών">
           <article class="card">
             <h3>Συμβουλευτική</h3>
             <p>Υποστήριξη για άγχος, πίεση, αποφάσεις, σχέσεις και αλλαγές στη ζωή.</p>
@@ -707,12 +796,10 @@
           </div>
         </div>
 
-        <!-- Directional cue (dead-end fix) -->
         <p class="directional-cue">
           Δεν είστε σίγουροι ποια υπηρεσία σας ταιριάζει;
           <a href="#contact">Μιλήστε μαζί μου</a>
         </p>
-
       </div>
     </section>
 
@@ -872,7 +959,6 @@
 
               <div class="contact-split-right">
                 <form id="contactForm" class="form" action="https://formspree.io/f/yourFormID" method="POST">
-                  <!-- Floating labels (accessible) -->
                   <label class="float-field">
                     <input class="float-input" type="text" name="name" autocomplete="name" placeholder=" " required>
                     <span class="float-label">Ονοματεπώνυμο</span>
@@ -888,13 +974,30 @@
                     <span class="float-label">Μήνυμα</span>
                   </label>
 
+                  <!-- Preference control (checkboxes) -->
+                  <fieldset class="pref">
+                    <legend class="pref__title">Προτιμώ πρώτη επικοινωνία μέσω</legend>
+                    <label class="pref__opt">
+                      <input type="checkbox" name="pref_phone" value="yes">
+                      <span>Τηλεφώνου</span>
+                    </label>
+                    <label class="pref__opt">
+                      <input type="checkbox" name="pref_email" value="yes">
+                      <span>Email</span>
+                    </label>
+                    <label class="pref__opt">
+                      <input type="checkbox" name="pref_viber" value="yes">
+                      <span>Viber</span>
+                    </label>
+                  </fieldset>
+
                   <div class="form-actions">
                     <button class="btn btn--primary" type="submit">Αποστολή</button>
                     <a class="btn btn--outline" href="tel:+306949626413">Κλήση</a>
                   </div>
 
                   <p class="form-note">
-                    Στο μήνυμα γράψτε και την υπηρεσία που θέλετε και ό,τι θεωρείτε χρήσιμο.
+                    Αν θέλετε, γράψτε σε μία πρόταση τι σας απασχολεί και ποια μέρα/ώρα σας βολεύει.
                   </p>
 
                   <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
@@ -915,6 +1018,55 @@
       </div>
     </section>
 
+    <!-- DIRECT CONTACT (no clicks, no modal) -->
+    <section class="section direct-contact fade-in-section" id="direct-contact">
+      <div class="container">
+        <div class="direct-card" aria-label="Άμεση επικοινωνία">
+          <div class="direct-copy">
+            <span class="kicker"><i></i> Άμεση Επικοινωνία</span>
+            <h2>Αν θέλετε, μπορείτε να επικοινωνήσετε τώρα.</h2>
+            <p class="direct-lead">
+              Χωρίς φόρμα, χωρίς βήματα. Επιλέξτε τον τρόπο που σας ηρεμεί περισσότερο.
+            </p>
+          </div>
+
+          <div class="direct-actions" role="list">
+            <a class="direct-action" role="listitem" href="tel:+306949626413">
+              <div>
+                <strong>Κλήση</strong>
+                <span>694 962 6413</span>
+              </div>
+              <em>Άνοιγμα</em>
+            </a>
+
+            <a class="direct-action" role="listitem" href="https://wa.me/306949626413" target="_blank" rel="noopener">
+              <div>
+                <strong>WhatsApp</strong>
+                <span>Στείλτε μήνυμα</span>
+              </div>
+              <em>Άνοιγμα</em>
+            </a>
+
+            <a class="direct-action" role="listitem" href="viber://chat?number=+306949626413">
+              <div>
+                <strong>Viber</strong>
+                <span>Άνοιγμα συνομιλίας</span>
+              </div>
+              <em>Άνοιγμα</em>
+            </a>
+
+            <a class="direct-action" role="listitem" href="#contact">
+              <div>
+                <strong>Φόρμα</strong>
+                <span>Αν προτιμάτε γραπτά</span>
+              </div>
+              <em>Μετάβαση</em>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer class="footer">
       <div class="container footer-inner">
         <p>© <span id="year"></span> Νικολέτα Πλατή</p>
@@ -922,7 +1074,6 @@
       </div>
     </footer>
 
-    <!-- Floating actions (direct tap opens app) -->
     <div class="floating-stack" aria-label="Γρήγορη επικοινωνία">
       <a class="floating-btn" href="https://wa.me/306949626413" target="_blank" rel="noopener" aria-label="WhatsApp">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -949,11 +1100,43 @@
     </div>
 
     <button class="back-to-top" type="button" aria-label="Πίσω πάνω">↑</button>
+
+    <!-- Sticky-only Action Sheet -->
+    <div class="sheet" id="apptSheet" aria-hidden="true">
+      <div class="sheet__panel" role="dialog" aria-modal="true" aria-label="Κλείστε ραντεβού">
+        <div class="sheet__top">
+          <div>
+            <p class="sheet__title">Κλείστε ραντεβού</p>
+            <p class="sheet__sub">Επιλέξτε τον τρόπο που σας βολεύει.</p>
+          </div>
+          <button class="sheet__close" type="button" aria-label="Κλείσιμο">×</button>
+        </div>
+
+        <div class="sheet__actions">
+          <a href="tel:+306949626413">
+            <strong>Κλήση</strong>
+            <span>694 962 6413</span>
+          </a>
+          <a href="https://wa.me/306949626413" target="_blank" rel="noopener">
+            <strong>WhatsApp</strong>
+            <span>Στείλτε μήνυμα</span>
+          </a>
+          <a href="viber://chat?number=+306949626413">
+            <strong>Viber</strong>
+            <span>Άνοιγμα συνομιλίας</span>
+          </a>
+          <a href="#contact">
+            <strong>Φόρμα</strong>
+            <span>Μετάβαση</span>
+          </a>
+        </div>
+      </div>
+    </div>
   </main>
 
-  <!-- Mobile sticky CTA bar -->
+  <!-- Mobile sticky CTA bar (Modal only here) -->
   <div class="mobile-cta" aria-label="Γρήγορα κουμπιά">
-    <a class="btn btn--primary" href="#contact">Ραντεβού</a>
+    <button class="btn btn--primary" type="button" data-open-sheet>Ραντεβού</button>
     <a class="btn btn--outline" href="https://wa.me/306949626413" target="_blank" rel="noopener">WhatsApp</a>
   </div>
 
@@ -1055,6 +1238,45 @@
         }catch(err){
           if(statusEl) statusEl.textContent = "Δεν ήταν δυνατή η αποστολή. Δοκιμάστε ξανά ή καλέστε στο 694 962 6413.";
         }
+      });
+    })();
+
+    /* Sticky-only action sheet (modal) */
+    (function(){
+      const sheet = document.getElementById("apptSheet");
+      const openBtn = document.querySelector("[data-open-sheet]");
+      const closeBtn = sheet ? sheet.querySelector(".sheet__close") : null;
+      const panel = sheet ? sheet.querySelector(".sheet__panel") : null;
+      if(!sheet || !openBtn || !closeBtn || !panel) return;
+
+      let lastFocus = null;
+
+      function openSheet(){
+        lastFocus = document.activeElement;
+        sheet.classList.add("is-open");
+        sheet.setAttribute("aria-hidden", "false");
+        document.body.classList.add("no-scroll");
+
+        const first = panel.querySelector("a,button");
+        if(first) first.focus();
+      }
+
+      function closeSheet(){
+        sheet.classList.remove("is-open");
+        sheet.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("no-scroll");
+        if(lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+      }
+
+      openBtn.addEventListener("click", openSheet);
+      closeBtn.addEventListener("click", closeSheet);
+
+      sheet.addEventListener("click", (e) => {
+        if(e.target === sheet) closeSheet();
+      });
+
+      window.addEventListener("keydown", (e) => {
+        if(sheet.classList.contains("is-open") && e.key === "Escape") closeSheet();
       });
     })();
   </script>

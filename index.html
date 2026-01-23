@@ -572,7 +572,7 @@
           </p>
 
           <div class="hero-cta">
-            <a class="btn btn--primary" href="#contact">Στείλτε μήνυμα για ξεκίνημα</a>
+            <a class="btn btn--primary" href="#contact">Κάντε το πρώτο βήμα</a>
             <a class="btn btn--outline" href="#about">Δείτε αν σας ταιριάζει</a>
           </div>
 
@@ -1270,4 +1270,129 @@
           });
 
           if(res.ok){
-            if(statusEl) statusEl.textContent = "Το μήνυμα στάλθηκε. Θα επικοι
+            if(statusEl) statusEl.textContent = "Το μήνυμα στάλθηκε. Θα επικοινωνήσω μαζί σας σύντομα.";
+            form.reset();
+            return;
+          }
+
+          if(statusEl) statusEl.textContent = "Κάτι πήγε στραβά. Δοκιμάστε ξανά ή καλέστε στο 694 962 6413.";
+        }catch(err){
+          if(statusEl) statusEl.textContent = "Δεν ήταν δυνατή η αποστολή. Δοκιμάστε ξανά ή καλέστε στο 694 962 6413.";
+        }
+      });
+    })();
+
+    (function(){
+      const isTouch = window.matchMedia("(hover: none)").matches;
+      if(!isTouch) return;
+
+      const stack = document.querySelector('.floating-stack');
+      const buttons = Array.from(document.querySelectorAll('.floating-btn[data-tooltip]'));
+      if(!buttons.length) return;
+
+      let timer = null;
+
+      function closeAll(){
+        buttons.forEach(b => b.classList.remove('is-tooltip-open'));
+      }
+      function openAll(){
+        buttons.forEach(b => b.classList.add('is-tooltip-open'));
+      }
+      function anyOpen(){
+        return buttons.some(b => b.classList.contains('is-tooltip-open'));
+      }
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          if(!anyOpen()){
+            e.preventDefault();
+            e.stopPropagation();
+            openAll();
+            clearTimeout(timer);
+            timer = setTimeout(closeAll, 2400);
+            return;
+          }
+
+          closeAll();
+          clearTimeout(timer);
+        }, true);
+      });
+
+      document.addEventListener('click', (e) => {
+        if(!stack || !e.target.closest('.floating-stack')) closeAll();
+      }, { passive: true });
+
+      window.addEventListener('scroll', closeAll, { passive: true });
+    })();
+
+    (function(){
+      const modal = document.getElementById('contactModal');
+      if(!modal) return;
+
+      const dialog = modal.querySelector('.contact-modal__dialog');
+      const closeEls = modal.querySelectorAll('[data-close="true"]');
+      const triggers = document.querySelectorAll('.js-call-cta');
+
+      let lastActive = null;
+      let hadNoScroll = false;
+
+      function openModal(){
+        lastActive = document.activeElement;
+        hadNoScroll = document.body.classList.contains('no-scroll');
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('no-scroll');
+
+        const firstAction = modal.querySelector('.contact-choice');
+        if(firstAction) firstAction.focus({ preventScroll: true });
+      }
+
+      function closeModal(){
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        if(!hadNoScroll) document.body.classList.remove('no-scroll');
+
+        if(lastActive && typeof lastActive.focus === 'function'){
+          lastActive.focus({ preventScroll: true });
+        }
+      }
+
+      triggers.forEach(el => {
+        el.addEventListener('click', (e) => {
+          e.preventDefault();
+          openModal();
+        });
+      });
+
+      closeEls.forEach(el => el.addEventListener('click', closeModal));
+
+      modal.addEventListener('click', (e) => {
+        if(e.target === modal) closeModal();
+      });
+
+      window.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+      });
+
+      modal.querySelectorAll('.contact-choice').forEach(a => {
+        a.addEventListener('click', () => closeModal());
+      });
+
+      modal.addEventListener('keydown', (e) => {
+        if(e.key !== 'Tab' || !modal.classList.contains('is-open')) return;
+        const focusables = dialog.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if(!focusables.length) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if(e.shiftKey && document.activeElement === first){
+          e.preventDefault();
+          last.focus();
+        }else if(!e.shiftKey && document.activeElement === last){
+          e.preventDefault();
+          first.focus();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

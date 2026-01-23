@@ -21,6 +21,15 @@
 }
 
 /* =========================
+   ELEVATION TOKENS (shadow hierarchy)
+   ========================= */
+:root{
+  --elev-1: 0 10px 22px rgba(31,29,26,.06);   /* subtle UI */
+  --elev-2: 0 18px 45px rgba(31,29,26,.10);   /* cards */
+  --elev-3: 0 22px 60px rgba(31,29,26,.14);   /* top-most / emphasis */
+}
+
+/* =========================
    PREMIUM A11Y: FOCUS STATES
    ========================= */
 :where(a, button, input, textarea, summary, .btn, .floating-btn, .social, .direct-action):focus{
@@ -32,8 +41,6 @@
   box-shadow: 0 0 0 6px rgba(127,174,160,.16);
   border-radius: 16px;
 }
-
-/* Inputs: a bit tighter focus ring */
 :where(input, textarea):focus-visible{
   outline-offset: 2px;
   box-shadow: 0 0 0 5px rgba(230,193,177,.16);
@@ -45,6 +52,7 @@
 .btn--sm{
   font-size: 13px;
   padding: 10px 14px;
+  box-shadow: var(--elev-1);
 }
 
 .site-header .nav > a:not(.btn--primary){
@@ -58,7 +66,7 @@
   border: 1px solid rgba(222,211,196,.95);
   background: rgba(255,255,255,.62);
   box-shadow:
-    0 10px 22px rgba(31,29,26,.06),
+    var(--elev-1),
     inset 0 1px 0 rgba(255,255,255,.60);
 
   color: rgba(31,29,26,.90);
@@ -77,14 +85,6 @@
 /* =========================
    GLOBAL HELPERS
    ========================= */
-:root{
-  --radius-xl: 28px;
-  --radius-lg: 22px;
-  --radius-md: 16px;
-  --shadow-soft: 0 18px 45px rgba(31,29,26,.10);
-  --shadow-tight: 0 10px 24px rgba(31,29,26,.08);
-}
-
 .section-head{
   margin-bottom: 18px;
 }
@@ -142,9 +142,9 @@ html.js .fade-in-section.is-visible{
   border-radius: var(--radius-lg);
   border: 1px solid rgba(222,211,196,.95);
   background: rgba(255,255,255,.70);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--elev-2);
   padding: 16px;
-  transition: transform .22s ease, box-shadow .25s ease;
+  transition: transform .22s ease, box-shadow .25s ease, background-color .25s ease;
 }
 .card h3{
   margin: 0 0 8px;
@@ -155,10 +155,16 @@ html.js .fade-in-section.is-visible{
   color: rgba(31,29,26,.76);
   line-height: 1.75;
 }
-.card:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 22px 55px rgba(31,29,26,.12);
+
+/* Hover only on desktop-like pointers */
+@media (hover: hover) and (pointer: fine){
+  .card:hover{
+    transform: translateY(-2px);
+    box-shadow: var(--elev-3);
+    background: rgba(127,174,160,.08); /* faint sage */
+  }
 }
+
 .card-link{
   font-weight: 750;
   letter-spacing: 0;
@@ -183,7 +189,7 @@ html.js .fade-in-section.is-visible{
     radial-gradient(1100px 360px at 0% 0%, rgba(230,193,177,.18), transparent 60%),
     radial-gradient(1100px 520px at 100% 100%, rgba(127,174,160,.14), transparent 60%),
     rgba(255,255,255,.70);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--elev-2);
   padding: 16px;
 }
 .services-callout__inner{
@@ -269,7 +275,7 @@ html.js .fade-in-section.is-visible{
   border-radius: var(--radius-lg);
   border: 1px solid rgba(222,211,196,.95);
   background: rgba(255,255,255,.70);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--elev-2);
   overflow: hidden;
   aspect-ratio: 4 / 5;
   position: relative;
@@ -302,7 +308,7 @@ html.js .fade-in-section.is-visible{
   border-radius: var(--radius-lg);
   border: 1px solid rgba(222,211,196,.95);
   background: rgba(255,255,255,.70);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--elev-2);
   overflow: hidden;
 }
 .space-main img, .space-tile img{ width: 100%; height: 100%; object-fit: cover; display:block; }
@@ -314,7 +320,7 @@ html.js .fade-in-section.is-visible{
   border-radius: var(--radius-lg);
   border: 1px solid rgba(222,211,196,.95);
   background: rgba(255,255,255,.70);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--elev-2);
   padding: 16px;
 }
 .space-notes h3{
@@ -348,7 +354,7 @@ details{
   border-radius: var(--radius-lg);
   border: 1px solid rgba(222,211,196,.95);
   background: rgba(255,255,255,.70);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--elev-2);
   overflow: hidden;
 }
 summary{
@@ -377,6 +383,7 @@ summary:after{
   place-items:center;
   font-weight: 800;
   opacity: .85;
+  box-shadow: var(--elev-1);
 }
 details[open] summary:after{ content:"–"; }
 
@@ -391,7 +398,7 @@ details[open] summary:after{ content:"–"; }
   border-radius: var(--radius-lg);
   border: 1px solid rgba(222,211,196,.95);
   background: rgba(255,255,255,.70);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--elev-2);
   overflow: hidden;
   aspect-ratio: 4 / 3;
 }
@@ -410,7 +417,7 @@ details[open] summary:after{ content:"–"; }
   border-radius: var(--radius-lg);
   border: 1px solid rgba(222,211,196,.95);
   background: rgba(255,255,255,.84);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--elev-2);
 }
 .contact-card{ padding: 18px; }
 .map-card{ overflow:hidden; aspect-ratio: 16 / 10; }
@@ -427,7 +434,7 @@ details[open] summary:after{ content:"–"; }
   overflow: hidden;
   border: 1px solid rgba(222,211,196,.95);
   background: rgba(255,255,255,.60);
-  box-shadow: 0 14px 34px rgba(31,29,26,.08);
+  box-shadow: var(--elev-2);
   margin-bottom: 14px;
   aspect-ratio: 16 / 10;
   height: auto;
@@ -464,7 +471,7 @@ details[open] summary:after{ content:"–"; }
   border-radius: 999px;
   border: 1px solid rgba(222,211,196,.95);
   background: rgba(255,255,255,.72);
-  box-shadow: 0 10px 22px rgba(31,29,26,.08);
+  box-shadow: var(--elev-1);
   display:grid;
   place-items:center;
   text-decoration:none;
@@ -478,7 +485,7 @@ details[open] summary:after{ content:"–"; }
   overflow: hidden;
   margin-top: 14px;
   background: rgba(255,255,255,.72);
-  box-shadow: var(--shadow-tight);
+  box-shadow: var(--elev-2);
 }
 .contact-split-left{
   padding: 14px;
@@ -540,7 +547,7 @@ details[open] summary:after{ content:"–"; }
 .pref{
   border: 1px solid rgba(222,211,196,.90);
   background: rgba(255,255,255,.74);
-  box-shadow: 0 12px 26px rgba(31,29,26,.06);
+  box-shadow: var(--elev-1);
   border-radius: 16px;
   padding: 12px;
   margin: 6px 0 10px;
@@ -607,7 +614,7 @@ details[open] summary:after{ content:"–"; }
     radial-gradient(1100px 420px at 0% 0%, rgba(230,193,177,.20), transparent 60%),
     radial-gradient(1100px 520px at 100% 100%, rgba(127,174,160,.16), transparent 60%),
     rgba(255,255,255,.74);
-  box-shadow: 0 22px 60px rgba(31,29,26,.12);
+  box-shadow: var(--elev-2);
   padding: 18px;
 }
 .direct-copy h2{
@@ -630,17 +637,20 @@ details[open] summary:after{ content:"–"; }
   border-radius: 18px;
   border: 1px solid rgba(222,211,196,.92);
   background: rgba(255,255,255,.82);
-  box-shadow: 0 12px 28px rgba(31,29,26,.08);
+  box-shadow: var(--elev-2);
   padding: 14px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap: 12px;
-  transition: transform .18s ease, box-shadow .25s ease;
+  transition: transform .18s ease, box-shadow .25s ease, background-color .25s ease;
 }
-.direct-action:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 18px 40px rgba(31,29,26,.12);
+@media (hover:hover) and (pointer:fine){
+  .direct-action:hover{
+    transform: translateY(-2px);
+    box-shadow: var(--elev-3);
+    background: rgba(230,193,177,.10);
+  }
 }
 .direct-action strong{
   display:block;
@@ -672,7 +682,7 @@ details[open] summary:after{ content:"–"; }
 }
 
 /* =========================
-   FOOTER
+   FOOTER (fix sticky overlap on mobile)
    ========================= */
 .footer{
   border-top: 1px solid rgba(222,211,196,.75);
@@ -690,6 +700,13 @@ details[open] summary:after{ content:"–"; }
 }
 .footer .muted{
   color: rgba(31,29,26,.74);
+}
+
+/* The "hole" fix: extra breathing room so the sticky CTA never covers footer content */
+@media (max-width: 859px){
+  .footer{
+    padding-bottom: calc(var(--mobileBarH) + 18px);
+  }
 }
 
 /* =========================

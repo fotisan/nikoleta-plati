@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Ψυχολόγος στη Ρόδο | Ραντεβού & Υπηρεσίες</title>
-  <meta name="description" content="Ψυχολογικές υπηρεσίες στη Ρόδο. Επιλέξτε υπηρεσία (Συμβουλευτική, Θεραπεία συμπεριφοράς (ABA), Παιγνιοθεραπεία) και ζητήστε να κλείσετε ραντεβού." />
+  <meta name="description" content="Ιδιωτικές συνεδρίες στη Ρόδο για ενήλικες, παιδιά και γονείς. Με διακριτικότητα και καθαρά βήματα, ξεκινάμε από εκεί που βρίσκεστε σήμερα." />
 
   <link rel="icon" href="logo.jpg" type="image/jpeg" />
   <link rel="apple-touch-icon" href="logo.jpg" />
@@ -16,7 +16,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="el_GR" />
   <meta property="og:title" content="Ψυχολόγος στη Ρόδο | Ραντεβού & Υπηρεσίες" />
-  <meta property="og:description" content="Ψυχολογικές υπηρεσίες στη Ρόδο. Επιλέξτε υπηρεσία και ζητήστε να κλείσετε ραντεβού." />
+  <meta property="og:description" content="Ιδιωτικές συνεδρίες στη Ρόδο για ενήλικες, παιδιά και γονείς. Με διακριτικότητα και καθαρά βήματα, ξεκινάμε από εκεί που βρίσκεστε σήμερα." />
   <meta property="og:image" content="Hero-section.webp" />
 
   <!-- JSON-LD Schema Markup -->
@@ -346,6 +346,14 @@
       border-color: rgba(222,211,196,.95);
       color: rgba(31,29,26,.92);
     }
+
+    /* Focus styles (accessibility) */
+    .btn:focus-visible,
+    .nav-toggle:focus-visible,
+    .site-header .nav a:focus-visible{
+      outline: 3px solid rgba(200,165,123,.55);
+      outline-offset: 3px;
+    }
     .btn--outline:hover{
       background: rgba(255,255,255,.95);
       border-color: rgba(200,165,123,.55);
@@ -615,7 +623,7 @@
           </h1>
 
           <p class="lead">
-            Εξειδικευμένη ψυχολογική υποστήριξη στη Ρόδο. Μαζί χτίζουμε τη διαδρομή προς την ισορροπία, με σεβασμό στον δικό σας ρυθμό.
+            Ατομικές συνεδρίες ενηλίκων, συμβουλευτική γονέων, ABA και παιγνιοθεραπεία στη Ρόδο. Μαζί χτίζουμε τη διαδρομή προς την ισορροπία, με σεβασμό στον δικό σας ρυθμό.
           </p>
 
           <div class="hero-cta">
@@ -678,6 +686,31 @@
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section fade-in-section" id="about" aria-label="Σχετικά">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-copy">
+            <div class="section-head">
+              <h2 class="h2">Σχετικά</h2>
+
+              <p class="sub">
+                Η απόφαση να ξεκινήσει κανείς ψυχοθεραπεία δεν είναι πάντα εύκολη. Συχνά έρχεται μετά από μια περίοδο κούρασης, ερωτηματικών ή την αίσθηση ότι οι τρόποι που επιστρατεύαμε μέχρι τώρα για να διαχειριστούμε τη ζωή μας, δεν αρκούν πια.
+                <br><br>
+                Πιστεύω βαθιά ότι η θεραπεία δεν είναι μια διαδικασία όπου κάποιος "διορθώνει" κάποιον άλλον. Είναι ένας κοινός τόπος όπου μπορείτε να ακουστείτε με πραγματικό σεβασμό, χωρίς τον φόβο της κριτικής. Είτε πρόκειται για έναν ενήλικα που αναζητά ισορροπία, είτε για ένα παιδί που εκφράζει τη δυσκολία του μέσα από τη συμπεριφορά και το παιχνίδι, ο στόχος παραμένει ο ίδιος: να δημιουργήσουμε την ασφάλεια που χρειάζεται για να επέλθει η αλλαγή.
+                <br><br>
+                Για τους γονείς, ο στόχος δεν είναι να “κάνετε τα πάντα τέλεια”. Είναι να έχετε καθοδήγηση, ξεκάθαρα βήματα και μια σταθερή συνεργασία, ώστε το σπίτι να γίνει πιο ήρεμο και προβλέψιμο. Εδώ, θα ακουστείτε με σεβασμό και θα δουλέψουμε μαζί, πρακτικά, χωρίς κριτική.
+              </p>
+            </div>
+          </div>
+
+          <figure class="about-media">
+            <img src="about-portrait.webp" alt="Η Νικολέτα Πλατή στον χώρο συνεδριών" loading="lazy" decoding="async" width="1200" height="1500">
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -755,36 +788,11 @@
 
             <div class="services-callout__actions">
               <a class="btn btn--primary" href="#contact">Στείλτε μήνυμα</a>
-              <a class="btn btn--outline js-call-cta" href="tel:+306949626413">Κλήση</a>
+              <button class="btn btn--outline js-call-cta" type="button" aria-haspopup="dialog" aria-controls="contactModal" aria-expanded="false">Κλήση</button>
             </div>
           </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section fade-in-section" id="about" aria-label="Σχετικά">
-      <div class="container">
-        <div class="about-grid">
-          <div class="about-copy">
-            <div class="section-head">
-              <h2 class="h2">Σχετικά</h2>
-
-              <p class="sub">
-                Η απόφαση να ξεκινήσει κανείς ψυχοθεραπεία δεν είναι πάντα εύκολη. Συχνά έρχεται μετά από μια περίοδο κούρασης, ερωτηματικών ή την αίσθηση ότι οι τρόποι που επιστρατεύαμε μέχρι τώρα για να διαχειριστούμε τη ζωή μας, δεν αρκούν πια.
-                <br><br>
-                Πιστεύω βαθιά ότι η θεραπεία δεν είναι μια διαδικασία όπου κάποιος "διορθώνει" κάποιον άλλον. Είναι ένας κοινός τόπος όπου μπορείτε να ακουστείτε με πραγματικό σεβασμό, χωρίς τον φόβο της κριτικής. Είτε πρόκειται για έναν ενήλικα που αναζητά ισορροπία, είτε για ένα παιδί που εκφράζει τη δυσκολία του μέσα από τη συμπεριφορά και το παιχνίδι, ο στόχος παραμένει ο ίδιος: να δημιουργήσουμε την ασφάλεια που χρειάζεται για να επέλθει η αλλαγή.
-                <br><br>
-                Για τους γονείς, ο στόχος δεν είναι να “κάνετε τα πάντα τέλεια”. Είναι να έχετε καθοδήγηση, ξεκάθαρα βήματα και μια σταθερή συνεργασία, ώστε το σπίτι να γίνει πιο ήρεμο και προβλέψιμο. Εδώ, θα ακουστείτε με σεβασμό και θα δουλέψουμε μαζί, πρακτικά, χωρίς κριτική.
-              </p>
-            </div>
-          </div>
-
-          <figure class="about-media">
-            <img src="about-portrait.webp" alt="Η Νικολέτα Πλατή στον χώρο συνεδριών" loading="lazy" decoding="async" width="1200" height="1500">
-          </figure>
-        </div>
       </div>
     </section>
 
@@ -1033,7 +1041,7 @@
 
                   <div class="form-actions">
                     <button class="btn btn--primary" type="submit">Αποστολή</button>
-                    <a class="btn btn--outline js-call-cta" href="tel:+306949626413">Κλήση</a>
+                    <button class="btn btn--outline js-call-cta" type="button" aria-haspopup="dialog" aria-controls="contactModal" aria-expanded="false">Κλήση</button>
                   </div>
 
                   <p class="form-note">
@@ -1107,11 +1115,11 @@
       </svg>
     </a>
 
-    <a class="floating-btn floating-btn--phone js-call-cta" href="tel:+306949626413" aria-label="Κλήση" data-tooltip="Τηλέφωνο">
+    <button class="floating-btn floating-btn--phone js-call-cta" type="button" aria-label="Κλήση" data-tooltip="Τηλέφωνο" aria-haspopup="dialog" aria-controls="contactModal" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M8.5 5.8l1.2 2.6c.2.4.1.9-.2 1.2l-1 1c1.1 2 2.8 3.7 4.8 4.8l1-1c.3-.3.8-.4 1.2-.2l2.6 1.2c.5.2.7.7.6 1.2l-.5 2c-.1.5-.6.8-1.1.8C10 20 4 14 4 6.4c0-.5.3-1 .8-1.1l2-.5c.5-.1 1 .1 1.2.6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
       </svg>
-    </a>
+    </button>
   </div>
 
   <!-- Call options modal -->
@@ -1328,6 +1336,7 @@
         modal.classList.add('is-open');
         modal.setAttribute('aria-hidden', 'false');
         document.body.classList.add('no-scroll');
+        triggers.forEach(t => t.setAttribute('aria-expanded','true'));
 
         const firstAction = modal.querySelector('.contact-choice');
         if(firstAction) firstAction.focus({ preventScroll: true });
@@ -1337,6 +1346,7 @@
         modal.classList.remove('is-open');
         modal.setAttribute('aria-hidden', 'true');
         if(!hadNoScroll) document.body.classList.remove('no-scroll');
+        triggers.forEach(t => t.setAttribute('aria-expanded','false'));
 
         if(lastActive && typeof lastActive.focus === 'function'){
           lastActive.focus({ preventScroll: true });
@@ -1344,8 +1354,9 @@
       }
 
       triggers.forEach(el => {
+        // Open modal from buttons/links styled as CTAs
         el.addEventListener('click', (e) => {
-          e.preventDefault();
+          if(el.tagName === 'A') e.preventDefault();
           openModal();
         });
       });

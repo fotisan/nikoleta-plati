@@ -8,6 +8,32 @@
   <title>Ψυχολόγος στη Ρόδο | Νικολέτα Πλατή</title>
   <meta name="description" content="Ψυχολόγος στη Ρόδο. Συνεδρίες για ενήλικες, παιδιά και εφήβους. Ραντεβού και επικοινωνία εύκολα, με σεβασμό και διακριτικότητα." />
 
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Νικολέτα Πλατή - Ψυχολόγος Ρόδος",
+    "image": "Hero-section.webp",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Διεύθυνση Γραφείου",
+      "addressLocality": "Ρόδος",
+      "addressRegion": "Δωδεκάνησα",
+      "postalCode": "85100",
+      "addressCountry": "GR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 36.434,
+      "longitude": 28.217
+    },
+    "url": "https://p-nikoleta.gr",
+    "telephone": "+306949626413",
+    "priceRange": "$$"
+  }
+  </script>
+
   <script>
     document.documentElement.classList.add('js');
   </script>
@@ -974,7 +1000,6 @@
                     <span class="float-label">Μήνυμα</span>
                   </label>
 
-                  <!-- Preference control (checkboxes) -->
                   <fieldset class="pref">
                     <legend class="pref__title">Προτιμώ πρώτη επικοινωνία μέσω</legend>
                     <label class="pref__opt">
@@ -992,7 +1017,7 @@
                   </fieldset>
 
                   <div class="form-actions">
-                    <button class="btn btn--primary" type="submit">Αποστολή</button>
+                    <button class="btn btn--primary" type="submit">Επικοινωνήστε μαζί μου</button>
                     <a class="btn btn--outline" href="tel:+306949626413">Κλήση</a>
                   </div>
 
@@ -1018,7 +1043,7 @@
       </div>
     </section>
 
-    <!-- DIRECT CONTACT (no clicks, no modal) -->
+    <!-- DIRECT CONTACT -->
     <section class="section direct-contact fade-in-section" id="direct-contact">
       <div class="container">
         <div class="direct-card" aria-label="Άμεση επικοινωνία">
@@ -1241,7 +1266,6 @@
       });
     })();
 
-    /* Sticky-only action sheet (modal) */
     (function(){
       const sheet = document.getElementById("apptSheet");
       const openBtn = document.querySelector("[data-open-sheet]");

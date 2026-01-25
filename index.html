@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Ψυχολόγος στη Ρόδο | Νικολέτα Πλατή</title>
-  <meta name="description" content="Ιδιωτικές συνεδρίες στη Ρόδο. Ένας ήρεμος χώρος για να ακουστείτε χωρίς πίεση, με καθαρά βήματα και σεβμό στον ρυθμό σας." />
+  <meta name="description" content="Ιδιωτικές συνεδρίες στη Ρόδο. Ένας ήρεμος χώρος για να ακουστείτε χωρίς πίεση, με καθαρά βήματα και σεβασμό στον ρυθμό σας." />
 
   <link rel="icon" href="logo.jpg" type="image/jpeg" />
   <link rel="apple-touch-icon" href="logo.jpg" />
@@ -19,7 +19,6 @@
   <meta property="og:description" content="Ένας ασφαλής, ήρεμος χώρος για να μιλήσετε όπως είστε. Χωρίς πίεση, με καθαρά βήματα." />
   <meta property="og:image" content="Hero-section.webp" />
 
-  <!-- JSON-LD Schema Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -44,11 +43,9 @@
   }
   </script>
 
-  <!-- LOCAL FONTS (no Google Fonts) -->
   <link rel="preload" href="Inter-roman.var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="Inter-italic-var.woff2" as="font" type="font/woff2" crossorigin>
 
-  <!-- CRITICAL CSS (above-the-fold: header + hero) -->
   <style>
     @font-face{
       font-family: "Inter";
@@ -610,7 +607,6 @@
       </div>
     </section>
 
-    <!-- SERVICES -->
     <section class="section fade-in-section" id="services" aria-label="Υπηρεσίες">
       <div class="container">
         <div class="section-head">
@@ -703,7 +699,6 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section class="section fade-in-section" id="about" aria-label="Σχετικά">
       <div class="container">
         <div class="about-grid">
@@ -732,7 +727,6 @@
       </div>
     </section>
 
-    <!-- SPACE -->
     <section class="section fade-in-section" id="space" aria-label="Ο χώρος">
       <div class="container">
         <div class="section-head">
@@ -771,7 +765,6 @@
       </div>
     </section>
 
-    <!-- PROCESS -->
     <section class="section fade-in-section" id="process" aria-label="Πώς δουλεύουμε">
       <div class="container">
         <div class="section-head">
@@ -821,7 +814,6 @@
       </div>
     </section>
 
-    <!-- EDUCATION -->
     <section class="section fade-in-section" id="education" aria-label="Εκπαίδευση">
       <div class="container">
         <div class="section-head">
@@ -829,24 +821,23 @@
           <p class="sub">Η εκπαίδευση είναι το υπόβαθρο. Η σχέση είναι αυτό που κάνει τη δουλειά να «πιάνει».</p>
         </div>
 
-        <div class="edu-carousel">
-          <div class="edu-carousel-head">
-            <div class="edu-carousel-controls" aria-label="Έλεγχος καρουζέλ">
-              <button class="edu-btn edu-btn--prev" type="button" aria-label="Προηγούμενη κάρτα" aria-controls="eduTrack">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M14.5 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
-              <button class="edu-btn edu-btn--next" type="button" aria-label="Επόμενη κάρτα" aria-controls="eduTrack">
-                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M9.5 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </button>
-            </div>
+        <div class="carousel-wrapper">
+          <div class="carousel-actions">
+            <button class="carousel-btn" id="prevBtn" aria-label="Προηγούμενο">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <button class="carousel-btn" id="nextBtn" aria-label="Επόμενο">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
           </div>
 
-          <div class="edu-track" id="eduTrack" tabindex="0">
-            <div class="help-card">
+          <div class="carousel-track" id="educationTrack">
+            
+            <div class="carousel-card">
               <div class="icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true">
                   <path d="M12 3l10 5-10 5L2 8l10-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
@@ -858,7 +849,7 @@
               <p class="p">University of Canterbury</p>
             </div>
 
-            <div class="help-card">
+            <div class="carousel-card">
               <div class="icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true">
                   <path d="M12 3l10 5-10 5L2 8l10-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
@@ -870,7 +861,7 @@
               <p class="p">Ανοικτό Ίδρυμα Εκπαίδευσης</p>
             </div>
 
-            <div class="help-card">
+            <div class="carousel-card">
               <div class="icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true">
                   <path d="M12 3l10 5-10 5L2 8l10-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
@@ -882,7 +873,7 @@
               <p class="p">Διεπιστημονικό Κέντρο Ηπείρου</p>
             </div>
 
-            <div class="help-card">
+            <div class="carousel-card">
               <div class="icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true">
                   <path d="M12 3l10 5-10 5L2 8l10-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
@@ -894,7 +885,7 @@
               <p class="p">Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών</p>
             </div>
 
-            <div class="help-card">
+            <div class="carousel-card">
               <div class="icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true">
                   <path d="M12 3l10 5-10 5L2 8l10-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
@@ -906,7 +897,7 @@
               <p class="p">Κέντρο Εφαρμοσμένης Ψυχοθεραπείας και Συμβουλευτικής</p>
             </div>
 
-            <div class="help-card">
+            <div class="carousel-card">
               <div class="icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true">
                   <path d="M12 3l10 5-10 5L2 8l10-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
@@ -918,7 +909,7 @@
               <p class="p">Μονορόδι Καλλιθέα</p>
             </div>
 
-            <div class="help-card">
+            <div class="carousel-card">
               <div class="icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true">
                   <path d="M12 3l10 5-10 5L2 8l10-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
@@ -929,12 +920,12 @@
               <h3 class="h3">WISC-V</h3>
               <p class="p">ΔΙ.ΚΕ.ΨΥ</p>
             </div>
+
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
     <section class="section section--soft fade-in-section" id="faq" aria-label="Συχνές ερωτήσεις">
       <div class="container">
         <div class="section-head">
@@ -973,7 +964,6 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section class="section fade-in-section" id="contact" aria-label="Επικοινωνία">
       <div class="container">
         <div class="section-head">
@@ -1123,7 +1113,6 @@
 
   </main>
 
-  <!-- Floating buttons -->
   <div class="floating-stack" aria-label="Γρήγορη επικοινωνία">
     <a class="floating-btn floating-btn--viber" href="viber://chat?number=%2B306949626413" aria-label="Viber" data-tooltip="Viber">
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -1146,7 +1135,6 @@
     </a>
   </div>
 
-  <!-- Call options modal -->
   <div class="contact-modal" id="contactModal" aria-hidden="true">
     <div class="contact-modal__backdrop" data-close="true" aria-hidden="true"></div>
 
@@ -1343,6 +1331,25 @@
       window.addEventListener('scroll', closeAll, { passive: true });
     })();
 
+    /* CAROUSEL JS */
+    (function(){
+      const track = document.getElementById('educationTrack');
+      const prev = document.getElementById('prevBtn');
+      const next = document.getElementById('nextBtn');
+      if(!track || !prev || !next) return;
+
+      // Scroll amount on button click
+      const scrollAmt = 260; 
+
+      prev.addEventListener('click', () => {
+        track.scrollBy({ left: -scrollAmt, behavior: 'smooth' });
+      });
+
+      next.addEventListener('click', () => {
+        track.scrollBy({ left: scrollAmt, behavior: 'smooth' });
+      });
+    })();
+
     (function(){
       const modal = document.getElementById('contactModal');
       if(!modal) return;
@@ -1410,49 +1417,6 @@
           first.focus();
         }
       });
-    })();
-
-    (function(){
-      const track = document.getElementById('eduTrack');
-      if(!track) return;
-
-      const prev = document.querySelector('.edu-btn--prev');
-      const next = document.querySelector('.edu-btn--next');
-      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-      function getStep(){
-        const first = track.querySelector('.help-card');
-        if(!first) return 320;
-
-        const cardW = first.getBoundingClientRect().width;
-        const gap = parseFloat(getComputedStyle(track).gap || 0);
-        return cardW + gap;
-      }
-
-      function update(){
-        const max = track.scrollWidth - track.clientWidth;
-        const x = track.scrollLeft;
-
-        if(prev) prev.disabled = x <= 1;
-        if(next) next.disabled = x >= (max - 1);
-      }
-
-      function scrollByDir(dir){
-        track.scrollBy({ left: dir * getStep(), behavior: prefersReduced ? 'auto' : 'smooth' });
-      }
-
-      if(prev) prev.addEventListener('click', () => scrollByDir(-1));
-      if(next) next.addEventListener('click', () => scrollByDir(1));
-
-      track.addEventListener('scroll', update, { passive: true });
-      window.addEventListener('resize', update, { passive: true });
-
-      track.addEventListener('keydown', (e) => {
-        if(e.key === 'ArrowLeft') { e.preventDefault(); scrollByDir(-1); }
-        if(e.key === 'ArrowRight') { e.preventDefault(); scrollByDir(1); }
-      });
-
-      update();
     })();
   </script>
 </body>

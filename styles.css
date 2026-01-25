@@ -315,7 +315,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px; /* Λίγο περισσότερος αέρας */
+  gap: 12px;
   margin-top: 24px;
   padding-bottom: 4px;
 }
@@ -324,7 +324,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: rgba(31, 29, 26, 0.2); /* Πιο απαλό γκρι όταν είναι ανενεργό */
+  background: rgba(31, 29, 26, 0.2);
   border: none;
   padding: 0;
   cursor: pointer;
@@ -332,7 +332,7 @@
   position: relative;
 }
 
-/* Για να είναι πιο εύκολο το κλικ σε κινητά, μεγαλώνουμε το hit-area με pseudo-element */
+/* Hit area */
 .carousel-dot::after {
   content: '';
   position: absolute;
@@ -340,7 +340,7 @@
 }
 
 .carousel-dot.is-active {
-  background: rgba(200,165,123, 1); /* Το χρώμα accent του site */
+  background: rgba(200,165,123, 1);
   transform: scale(1.3);
   box-shadow: 0 2px 6px rgba(200,165,123, 0.4);
 }
@@ -888,7 +888,7 @@
     display: none;
   }
 
-  /* CHANGE 2: Carousel Desktop - show 3 items (calc: (100% - 2 gaps)/3) */
+  /* Carousel Desktop - show 3 items (calc: (100% - 2 gaps)/3) */
   .carousel-card {
     flex: 0 0 calc((100% - 32px) / 3);
   }
@@ -960,12 +960,12 @@
   .about-grid{
     grid-template-columns: 1.15fr .85fr;
     gap: 16px;
-    align-items: stretch; /* Default: stretch to match heights */
+    align-items: stretch;
   }
   
-  /* CHANGE 1: Image significantly larger/taller than text on Desktop */
+  /* About Media: Height significantly larger than text on Desktop */
   .about-media {
-    min-height: 600px; /* Force height to be roughly 1/3 more than typical text block */
+    min-height: 600px;
     height: auto;
   }
   .about-media img {

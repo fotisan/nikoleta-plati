@@ -822,19 +822,6 @@
         </div>
 
         <div class="carousel-wrapper">
-          <div class="carousel-actions">
-            <button class="carousel-btn" id="prevBtn" aria-label="Προηγούμενο">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-            <button class="carousel-btn" id="nextBtn" aria-label="Επόμενο">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </div>
-
           <div class="carousel-track" id="educationTrack">
             
             <div class="carousel-card">
@@ -922,6 +909,9 @@
             </div>
 
           </div>
+
+          <div class="carousel-dots" id="carouselDots" aria-hidden="true">
+            </div>
         </div>
       </div>
     </section>
@@ -1331,23 +1321,43 @@
       window.addEventListener('scroll', closeAll, { passive: true });
     })();
 
-    /* CAROUSEL JS */
+    /* CAROUSEL JS with DOTS */
     (function(){
       const track = document.getElementById('educationTrack');
-      const prev = document.getElementById('prevBtn');
-      const next = document.getElementById('nextBtn');
-      if(!track || !prev || !next) return;
+      const dotsContainer = document.getElementById('carouselDots');
+      if(!track || !dotsContainer) return;
 
-      // Scroll amount on button click
-      const scrollAmt = 260; 
-
-      prev.addEventListener('click', () => {
-        track.scrollBy({ left: -scrollAmt, behavior: 'smooth' });
+      const cards = Array.from(track.querySelectorAll('.carousel-card'));
+      
+      // Generate Dots
+      cards.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot';
+        dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+        if(i === 0) dot.classList.add('is-active');
+        
+        dot.addEventListener('click', () => {
+          const cardWidth = cards[0].offsetWidth + 16; // width + gap
+          track.scrollTo({ left: cardWidth * i, behavior: 'smooth' });
+        });
+        
+        dotsContainer.appendChild(dot);
       });
 
-      next.addEventListener('click', () => {
-        track.scrollBy({ left: scrollAmt, behavior: 'smooth' });
-      });
+      const dots = Array.from(dotsContainer.children);
+
+      // Highlight active dot on scroll
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            const index = cards.indexOf(entry.target);
+            dots.forEach(d => d.classList.remove('is-active'));
+            if(dots[index]) dots[index].classList.add('is-active');
+          }
+        });
+      }, { root: track, threshold: 0.5 });
+
+      cards.forEach(card => observer.observe(card));
     })();
 
     (function(){

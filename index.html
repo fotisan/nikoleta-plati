@@ -1326,7 +1326,7 @@
       window.addEventListener('scroll', closeAll, { passive: true });
     })();
 
-    /* CAROUSEL JS - SMART PAGINATION LOGIC */
+    /* CAROUSEL JS - SMART PAGINATION LOGIC (UPDATED) */
     (function(){
       const track = document.getElementById('educationTrack');
       const dotsContainer = document.getElementById('carouselDots');
@@ -1335,21 +1335,14 @@
       let cards = Array.from(track.querySelectorAll('.carousel-card'));
       
       function updateDots() {
-        // Καθαρίζουμε τις παλιές τελείες
         dotsContainer.innerHTML = '';
         
-        // Υπολογισμός: Πόσες κάρτες χωράνε στο πλάτος του track;
         const trackWidth = track.clientWidth;
-        // Βρίσκουμε το πλάτος μιας κάρτας (αν υπάρχει)
         if(cards.length === 0) return;
         
-        const cardWidth = cards[0].offsetWidth + 16; // width + gap
         const visibleCards = Math.max(1, Math.floor(trackWidth / (cards[0].offsetWidth)));
-        
-        // Πόσες "σελίδες" χρειαζόμαστε;
         const totalPages = Math.ceil(cards.length / visibleCards);
 
-        // Δημιουργία τελειών (Pages)
         for (let i = 0; i < totalPages; i++) {
           const dot = document.createElement('button');
           dot.className = 'carousel-dot';
@@ -1357,9 +1350,6 @@
           if(i === 0) dot.classList.add('is-active');
           
           dot.addEventListener('click', () => {
-            // Scroll στο σωστό σημείο (σελίδα * πλάτος track)
-            // Σημείωση: Το scrollLeft μετράει pixels.
-            // Κάθε "σελίδα" είναι ίση με το πλάτος του ορατού παραθύρου (trackWidth).
             const scrollAmount = i * trackWidth; 
             track.scrollTo({ left: scrollAmount, behavior: 'smooth' });
           });
@@ -1369,32 +1359,43 @@
       }
 
       function onScroll() {
-        // Βρες ποια "σελίδα" είναι ενεργή
         const scrollLeft = track.scrollLeft;
         const trackWidth = track.clientWidth;
-        // Η τρέχουσα σελίδα είναι τα πίξελ που έχουμε κυλήσει / το πλάτος της σελίδας
-        const index = Math.round(scrollLeft / trackWidth);
+        const scrollWidth = track.scrollWidth;
+
+        // Βασικός υπολογισμός σελίδας
+        let index = Math.round(scrollLeft / trackWidth);
         
+        // --- ΝΕΟΣ ΕΛΕΓΧΟΣ ΓΙΑ ΤΟ ΤΕΛΟΣ ---
+        // Ελέγχουμε αν το scrollLeft + το πλάτος του παραθύρου είναι >= από το συνολικό πλάτος
+        // Βάζουμε μια ανοχή 10px για διαφορές subpixel σε κινητά
+        if (Math.ceil(scrollLeft + trackWidth) >= scrollWidth - 10) {
+           index = dotsContainer.children.length - 1;
+        }
+
         const dots = Array.from(dotsContainer.children);
         dots.forEach(d => d.classList.remove('is-active'));
-        if(dots[index]) dots[index].classList.add('is-active');
+        
+        // Ασφάλεια: Αν το index υπάρχει, άναψε το. Αλλιώς (fallback) άναψε το τελευταίο.
+        if(dots[index]) {
+          dots[index].classList.add('is-active');
+        } else if (dots.length > 0) {
+          dots[dots.length - 1].classList.add('is-active');
+        }
       }
 
-      // Αρχική εκτέλεση
       updateDots();
 
-      // Update on scroll (για να αλλάζει η τελεία όταν κάνεις swipe)
       track.addEventListener('scroll', () => {
         window.requestAnimationFrame(onScroll);
       }, { passive: true });
 
-      // Update on resize (αν γυρίσει ο χρήστης το κινητό ή αλλάξει παράθυρο)
       let resizeTimer;
       window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
           updateDots();
-          onScroll(); // Ξαναβρές πού είμαστε
+          onScroll();
         }, 100);
       });
     })();
